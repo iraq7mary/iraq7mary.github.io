@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unix Timestamp & Time Zone Converter - zaman hingga saat ini, multi-zona untuk dukungan</title>
+<meta name="description" content="Alat web murni: mengonversi cap waktu Unix ke tanggal dan sebaliknya, dan membaca waktu saat ini di Beijing, UTC, AS Timur dan Pasifik, London, dan Tokyo. Dibangun untuk layanan pelanggan e-niaga yang menangani pesanan lintas zona waktu dan pelanggan luar negeri. Berjalan secara lokal, tidak ada yang diunggah.">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unix Timestamp &amp; Time Zone Converter - zaman hingga saat ini, multi-zona untuk dukungan">
+<meta property="og:description" content="Alat web murni: mengonversi cap waktu Unix ke tanggal dan sebaliknya, dan membaca waktu saat ini di Beijing, UTC, AS Timur dan Pasifik, London, dan Tokyo. Dibangun untuk layanan pelanggan e-niaga yang menangani pesanan lintas zona waktu dan pelanggan luar negeri. Berjalan secara lokal, tidak ada yang diunggah.">
+<meta property="og:locale" content="id_ID"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Stempel Waktu Unix dan Konverter Multi-Zona Waktu",
+   "url": "https://iraq7mary.github.io/id/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "id",
+   "description": "Alat web murni: mengonversi cap waktu Unix ke tanggal dan sebaliknya, dan membaca waktu saat ini di Beijing, UTC, AS Timur dan Pasifik, London, dan Tokyo. Dibangun untuk layanan pelanggan e-niaga yang menangani pesanan lintas zona waktu dan pelanggan luar negeri. Berjalan secara lokal, tidak ada yang diunggah.",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/id/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "id",
+   "url": "https://iraq7mary.github.io/id/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Bagaimana cara mengonversi stempel waktu Unix menjadi tanggal?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tempelkan stempel waktu ke dalam kotak di atas dan konversikan. 10 digit adalah detik, 13 adalah milidetik; alat ini menunjukkan waktu yang cocok dalam UTC dan zona seperti Beijing dan AS Bagian Timur."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Di zona waktu manakah stempel waktu berada?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Stempel waktu Unix tidak memiliki zona waktu - ini adalah jumlah detik sejak 1970-01-01 00:00:00 UTC, satu instan global; Anda hanya memilih zona untuk menampilkannya sebagai waktu jam dinding."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Mengapa waktu pelanggan berbeda dengan waktu backend saya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Biasanya kesenjangan zona waktu. Backend sering kali menggunakan waktu UTC atau Beijing, sedangkan pelanggan menyatakan waktu lokalnya. Ubah momen yang sama menjadi kedua zona untuk disejajarkan."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Apakah waktu musim panas mempengaruhi konversi?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ya. US Eastern, London dan Sydney menerapkan DST, sehingga jarak mereka dari Beijing berubah berdasarkan musim. Alat ini menggunakan data IANA bawaan browser untuk menanganinya secara otomatis."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Apa masalah tahun 2038?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Stempel waktu 32-bit yang ditandatangani mencapai maksimum pada 2038-01-19 03:14:07 UTC dan kemudian meluap. Sistem modern menggunakan 64-bit, jadi dukungan sehari-hari tidak perlu khawatir, tetapi perhatikan log sistem lama."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Apakah alat tersebut mengunggah data saya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tidak. Semua konversi stempel waktu dan zona waktu berjalan secara lokal di browser Anda - tidak ada yang diunggah atau disimpan."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Bisakah itu mengonversi cap waktu milidetik?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ya. 13 digit diurai sebagai milidetik, 10 sebagai detik; Anda juga dapat menempelkan tanggal ISO (seperti 2026-06-30T12:00:00Z) untuk mendapatkan kembali stempel waktunya."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <strong>Bahasa Indonesia</strong> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Stempel Waktu Unix dan Konverter Multi-Zona Waktu</h1>
+<p class="byline"><a href="/id/about-editor/" rel="author">周明</a> · Diperbarui 2026-06</p>
+<p>Dukungan e-niaga sering kali berhubungan dengan stempel waktu Unix dalam log pesanan dan pelanggan yang tersebar di seluruh zona waktu. Ini adalah alat web murni: mengonversi stempel waktu dan tanggal Unix dua arah, dan melihat waktu saat ini di zona umum secara real-time, sehingga Anda dapat menyelaraskan percakapan lintas zona waktu dan memesan waktu dengan cepat. Semuanya berjalan secara lokal di browser Anda - tidak ada yang diunggah atau diinstal.</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="Stempel waktu Yi Waiwai dan spanduk konverter zona waktu" width="1120" height="360" fetchpriority="high"></picture><figcaption>Konversi cap waktu dan zona waktu Unix secara online untuk dukungan e-commerce lintas batas</figcaption></figure>
+<h2>Ubah stempel waktu atau tanggal</h2><p>Tempelkan stempel waktu Unix (10 digit untuk detik, 13 untuk milidetik) atau tanggal ISO ke dalam kotak di bawah dan konversikan. Tabel di atas menunjukkan waktu saat ini di seluruh zona waktu yang paling umum dalam dukungan e-commerce lintas batas.</p>
+<div class="rk"><div id="clk-out">Membaca zona waktu...</div><div class="conv"><input id="ts-in" placeholder="Masukkan stempel waktu atau tanggal Unix, mis. 1000000000" autocomplete="off"><button id="conv-go">Mengkonversi</button></div><div id="conv-out"></div></div>
+<h2>Apa itu stempel waktu Unix dan bagaimana konversinya</h2><p>Stempel waktu Unix adalah jumlah detik bukan kabisat sejak zaman UTC, 1 Januari 1970 00:00:00, dihitung 86400 detik per hari. Misalnya, 1000000000 adalah 2001-09-09 01:46:40 UTC. Perhatikan bahwa stempel waktu 32-bit yang ditandatangani meluap di 2038-01-19 03:14:07 UTC (masalah tahun 2038).</p>
+<table><tr><th>Konsep</th><th>Detil</th></tr><tr><td>Zaman</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>Menghitung</td><td>Detik non-kabisat sejak zaman, 86400 per hari</td></tr><tr><td>Contoh</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>masalah tahun 2038</td><td>32-bit yang ditandatangani meluap di 2038-01-19 03:14:07 UTC</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>Gambar 1: alur konversi stempel waktu-tanggal - masukkan stempel waktu atau tanggal, dapatkan waktu UTC dan per zona.</figcaption></figure>
+<h2>Zona waktu umum dalam dukungan e-niaga</h2><p>Di bawah ini adalah kesepakatan dukungan lintas batas zona waktu yang paling banyak digunakan, beserta nama IANA-nya. Alat ini menggunakan database zona waktu bawaan browser untuk mengonversi secara real-time (menangani waktu musim panas secara otomatis), sehingga Anda tidak perlu menambah atau mengurangi offset dengan tangan. Petakan kota pelanggan ke salah satu zona ini untuk mengetahui waktu setempat.</p>
+<table><tr><th>Wilayah</th><th>Zona waktu IANA</th><th>Perimbangan yang khas</th></tr><tr><td>Beijing / Tiongkok</td><td>Asia/Shanghai</td><td>UTC+8 (sepanjang tahun)</td></tr><tr><td>Waktu Universal Terkoordinasi</td><td>UTC</td><td>UTC+0</td></tr><tr><td>AS bagian Timur</td><td>America/New_York</td><td>UTC-5 / -4 (DST)</td></tr><tr><td>Pasifik AS</td><td>America/Los_Angeles</td><td>UTC-8 / -7 (DST)</td></tr><tr><td>London</td><td>Europe/London</td><td>UTC+0 / +1 (DST)</td></tr><tr><td>Tokyo</td><td>Asia/Tokyo</td><td>UTC+9 (sepanjang tahun)</td></tr><tr><td>Jakarta</td><td>Asia/Jakarta</td><td>UTC+7 (sepanjang tahun)</td></tr><tr><td>Sidney</td><td>Australia/Sydney</td><td>UTC+10 / +11 (DST)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>Gambar 2: UTC offset zona umum (konversi sebenarnya ditangani oleh browser dengan DST).</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="Zona waktu dukungan e-commerce umum dan grafik offset UTC" width="1120" height="560" loading="lazy"></picture><figcaption>Zona waktu umum dalam dukungan lintas batas, dengan sekilas offset UTC</figcaption></figure>
+<section id="data2026">
+<h2>Ikhtisar zona waktu global dan DST tahun 2026 (perkiraan)</h2><p>Untuk dukungan lintas batas, ada baiknya jika kita mengetahui lanskapnya: pada tahun 2026, sekitar sepertiga negara di dunia menerapkan waktu musim panas (sekitar 34% pada tahun 2023), terkonsentrasi di Eropa dan Amerika Utara, sementara sebagian besar negara di Asia dan Afrika khatulistiwa tidak menerapkan waktu musim panas - sehingga offset mereka dari Tiongkok tetap konstan sepanjang tahun. Offset UTC global mencakup UTC-12 to UTC+14.</p>
+<table><tr><th>Konsep</th><th>2026</th></tr><tr><td>Negara-negara yang mengamati DST (2023)</td><td>≈ 34%</td></tr><tr><td>Rentang offset UTC global</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>zaman Unix</td><td>1970-01-01 UTC</td></tr><tr><td>Momen luapan tahun 2038</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">Perkiraan, bukan langsung: bagian DST berasal dari Wikipedia (tentang 34% pada tahun 2023); zona waktu dan offset mengikuti database zona waktu IANA; Tanggal mulai dan akhir DST sedikit berubah setiap tahunnya, jadi percayalah pada alat tersebut (data IANA browser) untuk konversi sebenarnya.</p></section>
+<div class="cta"><h2>Unduh Yi Waiwai</h2><p>Butuh balasan cepat dan manajemen skrip yang lebih cepat untuk dukungan e-commerce? Dapatkan aplikasi desktop Yi Waiwai dari halaman unduh resmi:</p><a class="dl" href="https://yiwaiwaiservice.com/download/">Unduh Yi Waiwai (resmi)</a></div>
+<h2>Pertanyaan yang sering diajukan</h2><details><summary>Bagaimana cara mengonversi stempel waktu Unix menjadi tanggal?</summary><p>Tempelkan stempel waktu ke dalam kotak di atas dan konversikan. 10 digit adalah detik, 13 adalah milidetik; alat ini menunjukkan waktu yang cocok dalam UTC dan zona seperti Beijing dan AS Bagian Timur.</p></details><details><summary>Di zona waktu manakah stempel waktu berada?</summary><p>Stempel waktu Unix tidak memiliki zona waktu - ini adalah jumlah detik sejak 1970-01-01 00:00:00 UTC, satu instan global; Anda hanya memilih zona untuk menampilkannya sebagai waktu jam dinding.</p></details><details><summary>Mengapa waktu pelanggan berbeda dengan waktu backend saya?</summary><p>Biasanya kesenjangan zona waktu. Backend sering kali menggunakan waktu UTC atau Beijing, sedangkan pelanggan menyatakan waktu lokalnya. Ubah momen yang sama menjadi kedua zona untuk disejajarkan.</p></details><details><summary>Apakah waktu musim panas mempengaruhi konversi?</summary><p>Ya. US Eastern, London dan Sydney menerapkan DST, sehingga jarak mereka dari Beijing berubah berdasarkan musim. Alat ini menggunakan data IANA bawaan browser untuk menanganinya secara otomatis.</p></details><details><summary>Apa masalah tahun 2038?</summary><p>Stempel waktu 32-bit yang ditandatangani mencapai maksimum pada 2038-01-19 03:14:07 UTC dan kemudian meluap. Sistem modern menggunakan 64-bit, jadi dukungan sehari-hari tidak perlu khawatir, tetapi perhatikan log sistem lama.</p></details><details><summary>Apakah alat tersebut mengunggah data saya?</summary><p>Tidak. Semua konversi stempel waktu dan zona waktu berjalan secara lokal di browser Anda - tidak ada yang diunggah atau disimpan.</p></details><details><summary>Bisakah itu mengonversi cap waktu milidetik?</summary><p>Ya. 13 digit diurai sebagai milidetik, 10 sebagai detik; Anda juga dapat menempelkan tanggal ISO (seperti 2026-06-30T12:00:00Z) untuk mendapatkan kembali stempel waktunya.</p></details>
+<h2>Pemeriksaan cepat di dunia nyata</h2><ul class="scenes"><li>Pelanggan luar negeri menanyakan kapan pesanan mereka dikirimkan: backend menyimpan stempel waktu UTC; ubah ke zona pelanggan dan beri tahu mereka waktu setempat untuk menghindari kebingungan.</li><li>Menjadwalkan streaming langsung atau penjualan lintas zona waktu: ubah waktu Beijing ke US Eastern dan London untuk mengonfirmasi slot lokal berfungsi.</li><li>Pemecahan masalah log: API pesanan mengembalikan stempel waktu 10 digit; rekatkan untuk membaca waktu manusia dan menentukan momen yang tepat.</li><li>Seorang pelanggan mengatakan ini sudah hari berikutnya: di offset besar atau garis tanggal, konfirmasikan setiap sisi tanggal lokal sehingga Anda tidak mengutip hari yang salah.</li></ul>
+<div class="related"><h2>Terkait</h2><ul>
+<li><a href="/id/about-editor/">Tentang penulis: Zhou Ming</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>Fakta stempel waktu dan zona waktu yang dikumpulkan dari Wikipedia (waktu Unix, waktu musim panas) dan database zona waktu IANA; konversi menggunakan API browser standar (Date / Intl) dan hanya untuk referensi.<br>Oleh 周明 · editor konten · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "Stempel waktu Unix saat ini", "local_tz": "Zona waktu Anda", "region": "Wilayah", "tz_name": "Zona waktu IANA", "local_time": "Waktu setempat", "detecting": "Membaca zona waktu...", "unix_ts": "Stempel waktu Unix", "bad_input": "Tidak dapat menguraikan - masukkan stempel waktu Unix (10/13 digit) atau tanggal", "convert": "Mengkonversi", "ph": "Masukkan stempel waktu atau tanggal Unix, mis. 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
