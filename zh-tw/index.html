@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unix 時間戳轉換器 - 時間戳↔日期·多時區換算(電商客服跨時區工具)</title>
+<meta name="description" content="開啟即用的純網頁工具：Unix 時間戳與日期互轉，並按北京/UTC/美東/美西/倫敦/東京等常用時區實時換算，適合電商客服處理跨時區訂單與海外客戶時間。本地瀏覽器執行，不上傳不安裝。">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unix 時間戳轉換器 - 時間戳↔日期·多時區換算(電商客服跨時區工具)">
+<meta property="og:description" content="開啟即用的純網頁工具：Unix 時間戳與日期互轉，並按北京/UTC/美東/美西/倫敦/東京等常用時區實時換算，適合電商客服處理跨時區訂單與海外客戶時間。本地瀏覽器執行，不上傳不安裝。">
+<meta property="og:locale" content="zh_TW"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Unix 時間戳與多時區線上轉換器",
+   "url": "https://iraq7mary.github.io/zh-tw/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "zh-Hant",
+   "description": "開啟即用的純網頁工具：Unix 時間戳與日期互轉，並按北京/UTC/美東/美西/倫敦/東京等常用時區實時換算，適合電商客服處理跨時區訂單與海外客戶時間。本地瀏覽器執行，不上傳不安裝。",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/zh-tw/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "zh-Hant",
+   "url": "https://iraq7mary.github.io/zh-tw/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Unix 時間戳怎麼轉成日期？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "把時間戳粘進上方輸入框點換算即可。10 位是秒、13 位是毫秒；工具會顯示 UTC 與北京、美東等時區的對應時間。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "時間戳是按哪個時區的？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Unix 時間戳本身不含時區，它表示自 1970-01-01 00:00:00 UTC 起的秒數，是全球統一的時刻；換算成幾點幾分才需要指定時區。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "為什麼客戶說的時間和我後臺不一樣？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "多半是時區差。後臺常用 UTC 或北京時間，客戶說的是其當地時間。用本工具把同一時刻換到雙方時區即可對齊。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "夏令時會影響換算嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "會。美東、倫敦、悉尼等地有夏令時，與北京的時差按季節變動。工具用瀏覽器內建 IANA 資料自動處理，無需手動加減。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "什麼是 2038 問題？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "32 位有符號時間戳最大到 2038-01-19 03:14:07 UTC，之後會溢位。現代系統多已用 64 位，普通客服無需擔心，但老系統日誌要留意。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "這個工具會上傳我的資料嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "不會。時間戳與時區換算全部在你本地瀏覽器內完成，不上傳、不儲存。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "毫秒時間戳也能轉嗎？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "能。13 位會按毫秒解析，10 位按秒解析；也可直接貼上 ISO 日期（如 2026-06-30T12:00:00Z）反查時間戳。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <strong>繁體中文</strong> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Unix 時間戳與多時區線上轉換器</h1>
+<p class="byline"><a href="/zh-tw/about-editor/" rel="author">周明</a> · 更新於 2026-06</p>
+<p>電商客服常要面對訂單日誌裡的 Unix 時間戳，以及海外客戶所在的時區。本頁是一個純網頁小工具：把 Unix 時間戳和日期互相轉換，並按常用時區實時顯示當前時間，幫你快速對齊跨時區溝通與下單時間。全部在本地瀏覽器完成，不上傳、不安裝。</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="易歪歪時間戳與時區轉換工具橫幅" width="1120" height="360" fetchpriority="high"></picture><figcaption>Unix 時間戳與多時區線上換算，助力電商跨時區客服</figcaption></figure>
+<h2>時間戳與時區線上換算</h2><p>在下方輸入框粘入 Unix 時間戳（10 位為秒、13 位為毫秒）或一個日期，點換算即可。上方表格按跨境電商客服最常用的時區實時顯示當前時間。</p>
+<div class="rk"><div id="clk-out">正在讀取時區…</div><div class="conv"><input id="ts-in" placeholder="輸入 Unix 時間戳或日期,例如 1000000000" autocomplete="off"><button id="conv-go">換算</button></div><div id="conv-out"></div></div>
+<h2>Unix 時間戳是什麼、怎麼換算</h2><p>Unix 時間戳是從協調世界時 1970 年 1 月 1 日 00:00:00 起經過的非閏秒數，每天按 86400 秒計。例如時間戳 1000000000 對應 2001-09-09 01:46:40 UTC。注意 32 位有符號時間戳會在 2038-01-19 03:14:07 UTC 溢位（俗稱 2038 問題）。</p>
+<table><tr><th>概念</th><th>說明</th></tr><tr><td>紀元 Epoch</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>計數方式</td><td>自紀元起的非閏秒數，每天 86400 秒</td></tr><tr><td>示例</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>2038 問題</td><td>32 位有符號時間戳於 2038-01-19 03:14:07 UTC 溢位</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>圖1：時間戳與日期互轉流程——輸入時間戳或日期，得到 UTC 與各時區時間</figcaption></figure>
+<h2>電商客服常用時區速查</h2><p>下面列出跨境電商客服最常打交道的時區及其 IANA 名稱。工具用瀏覽器內建的時區資料庫實時換算（自動處理夏令時），無需手動加減時差。把客戶所在城市對應到這些時區，即可知道對方的當地時間。</p>
+<table><tr><th>地區</th><th>IANA 時區名</th><th>典型偏移</th></tr><tr><td>北京 / 中國</td><td>Asia/Shanghai</td><td>UTC+8（全年）</td></tr><tr><td>協調世界時</td><td>UTC</td><td>UTC+0</td></tr><tr><td>美國東部</td><td>America/New_York</td><td>UTC-5 / -4（夏令時）</td></tr><tr><td>美國西部</td><td>America/Los_Angeles</td><td>UTC-8 / -7（夏令時）</td></tr><tr><td>英國倫敦</td><td>Europe/London</td><td>UTC+0 / +1（夏令時）</td></tr><tr><td>日本東京</td><td>Asia/Tokyo</td><td>UTC+9（全年）</td></tr><tr><td>印尼雅加達</td><td>Asia/Jakarta</td><td>UTC+7（全年）</td></tr><tr><td>澳洲悉尼</td><td>Australia/Sydney</td><td>UTC+10 / +11（夏令時）</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>圖2：常用時區的 UTC 偏移示意（實際換算由瀏覽器按夏令時自動處理）</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="電商客服常用時區 UTC 偏移對照圖" width="1120" height="560" loading="lazy"></picture><figcaption>跨境電商客服常用時區與 UTC 偏移一覽</figcaption></figure>
+<section id="data2026">
+<h2>2026 全球時區與夏令時概覽（估算）</h2><p>做跨境客服要心裡有數：截至 2026 年，全球約三分之一的國家實行夏令時（2023 年約為 34%），集中在歐洲與北美；亞洲、赤道非洲的多數地區不實行夏令時，因此與中國的時差全年固定。全球時區的 UTC 偏移跨越 UTC-12 到 UTC+14。</p>
+<table><tr><th>概念</th><th>2026</th></tr><tr><td>實行夏令時的國家佔比（2023）</td><td>≈ 34%</td></tr><tr><td>全球 UTC 偏移範圍</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>Unix 紀元</td><td>1970-01-01 UTC</td></tr><tr><td>2038 溢位時刻</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">估算·非一手：夏令時佔比來自維基百科（2023 年約 34%），時區與偏移以 IANA 時區資料庫為準；各地夏令時起止日期每年微調，實際換算請以工具（瀏覽器內建 IANA 資料）結果為準。</p></section>
+<div class="cta"><h2>下載易歪歪</h2><p>需要更高效的電商客服快捷回覆與話術管理？從官方下載頁獲取易歪歪桌面版：</p><a class="dl" href="https://yiwaiwaiservice.com/download/">下載易歪歪（官方）</a></div>
+<h2>常見問題</h2><details><summary>Unix 時間戳怎麼轉成日期？</summary><p>把時間戳粘進上方輸入框點換算即可。10 位是秒、13 位是毫秒；工具會顯示 UTC 與北京、美東等時區的對應時間。</p></details><details><summary>時間戳是按哪個時區的？</summary><p>Unix 時間戳本身不含時區，它表示自 1970-01-01 00:00:00 UTC 起的秒數，是全球統一的時刻；換算成幾點幾分才需要指定時區。</p></details><details><summary>為什麼客戶說的時間和我後臺不一樣？</summary><p>多半是時區差。後臺常用 UTC 或北京時間，客戶說的是其當地時間。用本工具把同一時刻換到雙方時區即可對齊。</p></details><details><summary>夏令時會影響換算嗎？</summary><p>會。美東、倫敦、悉尼等地有夏令時，與北京的時差按季節變動。工具用瀏覽器內建 IANA 資料自動處理，無需手動加減。</p></details><details><summary>什麼是 2038 問題？</summary><p>32 位有符號時間戳最大到 2038-01-19 03:14:07 UTC，之後會溢位。現代系統多已用 64 位，普通客服無需擔心，但老系統日誌要留意。</p></details><details><summary>這個工具會上傳我的資料嗎？</summary><p>不會。時間戳與時區換算全部在你本地瀏覽器內完成，不上傳、不儲存。</p></details><details><summary>毫秒時間戳也能轉嗎？</summary><p>能。13 位會按毫秒解析，10 位按秒解析；也可直接貼上 ISO 日期（如 2026-06-30T12:00:00Z）反查時間戳。</p></details>
+<h2>常見場景速判</h2><ul class="scenes"><li>海外客戶問我的訂單幾點發的：後臺是 UTC 時間戳，用工具換到客戶所在時區告訴他當地時間，避免誤解。</li><li>安排跨時區直播或促銷：把北京時間換算到美東、倫敦，確認對應當地時段是否合適。</li><li>對接日誌排查：訂單介面返回 10 位時間戳，粘進工具立刻看到可讀時間，定位是哪一刻的操作。</li><li>客戶說已經第二天了：跨大時差或日期變更線時，用工具確認雙方各自的當地日期，避免發錯日期的話術。</li></ul>
+<div class="related"><h2>相關</h2><ul>
+<li><a href="/zh-tw/about-editor/">關於作者：周明</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>時間戳與時區知識整理自維基百科（Unix 時間、夏令時）與 IANA 時區資料庫；換算由瀏覽器標準 API（Date / Intl）完成，僅供參考。<br>作者：周明 · 內容編輯 · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "當前 Unix 時間戳", "local_tz": "你的時區", "region": "地區", "tz_name": "IANA 時區", "local_time": "當地時間", "detecting": "正在讀取時區…", "unix_ts": "Unix 時間戳(秒)", "bad_input": "無法識別,請輸入 Unix 時間戳(10/13 位)或日期", "convert": "換算", "ph": "輸入 Unix 時間戳或日期,例如 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
