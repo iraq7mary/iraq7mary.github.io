@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="km"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unix Timestamp & Time Zone Converter - សម័យកាលមកដល់បច្ចុប្បន្ន ពហុតំបន់សម្រាប់ការគាំទ្រ</title>
+<meta name="description" content="ឧបករណ៍បណ្តាញសុទ្ធ៖ បំប្លែងត្រាពេលវេលា Unix ទៅជាកាលបរិច្ឆេទ និងត្រឡប់មកវិញ ហើយអានពេលវេលាបច្ចុប្បន្ននៅទូទាំងទីក្រុងប៉េកាំង UTC អាមេរិកខាងកើត និងប៉ាស៊ីហ្វិក ទីក្រុងឡុងដ៍ និងតូក្យូ។ បង្កើតឡើងសម្រាប់សេវាកម្មអតិថិជន e-commerce គ្រប់គ្រងការបញ្ជាទិញឆ្លងតំបន់ និងអតិថិជនក្រៅប្រទេស។ ដំណើរការក្នុងមូលដ្ឋាន មិនមានអ្វីផ្ទុកឡើងទេ។">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unix Timestamp &amp; Time Zone Converter - សម័យកាលមកដល់បច្ចុប្បន្ន ពហុតំបន់សម្រាប់ការគាំទ្រ">
+<meta property="og:description" content="ឧបករណ៍បណ្តាញសុទ្ធ៖ បំប្លែងត្រាពេលវេលា Unix ទៅជាកាលបរិច្ឆេទ និងត្រឡប់មកវិញ ហើយអានពេលវេលាបច្ចុប្បន្ននៅទូទាំងទីក្រុងប៉េកាំង UTC អាមេរិកខាងកើត និងប៉ាស៊ីហ្វិក ទីក្រុងឡុងដ៍ និងតូក្យូ។ បង្កើតឡើងសម្រាប់សេវាកម្មអតិថិជន e-commerce គ្រប់គ្រងការបញ្ជាទិញឆ្លងតំបន់ និងអតិថិជនក្រៅប្រទេស។ ដំណើរការក្នុងមូលដ្ឋាន មិនមានអ្វីផ្ទុកឡើងទេ។">
+<meta property="og:locale" content="km_KH"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Unix Timestamp និង Multi-Time-Zone Converter",
+   "url": "https://iraq7mary.github.io/km/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "km",
+   "description": "ឧបករណ៍បណ្តាញសុទ្ធ៖ បំប្លែងត្រាពេលវេលា Unix ទៅជាកាលបរិច្ឆេទ និងត្រឡប់មកវិញ ហើយអានពេលវេលាបច្ចុប្បន្ននៅទូទាំងទីក្រុងប៉េកាំង UTC អាមេរិកខាងកើត និងប៉ាស៊ីហ្វិក ទីក្រុងឡុងដ៍ និងតូក្យូ។ បង្កើតឡើងសម្រាប់សេវាកម្មអតិថិជន e-commerce គ្រប់គ្រងការបញ្ជាទិញឆ្លងតំបន់ និងអតិថិជនក្រៅប្រទេស។ ដំណើរការក្នុងមូលដ្ឋាន មិនមានអ្វីផ្ទុកឡើងទេ។",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/km/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "km",
+   "url": "https://iraq7mary.github.io/km/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "តើខ្ញុំបំប្លែងត្រាពេលវេលាយូនីកទៅជាកាលបរិច្ឆេទដោយរបៀបណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "បិទភ្ជាប់ត្រាពេលវេលាទៅក្នុងប្រអប់ខាងលើ ហើយបំប្លែង។ 10 ខ្ទង់គឺជាវិនាទី 13 គឺជាមីលីវិនាទី; ឧបករណ៍នេះបង្ហាញពីពេលវេលាដែលត្រូវគ្នានៅក្នុង UTC និងតំបន់ដូចជាទីក្រុងប៉េកាំង និងអាមេរិកខាងកើត។"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "តើ​តំបន់​ពេលវេលា​មួយ​ណា​ជា​ត្រា​ពេលវេលា​នៅ​ក្នុង​?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ត្រាពេលវេលា Unix មិនមានតំបន់ពេលវេលាទេ - វាជាចំនួនវិនាទីចាប់តាំងពី 1970-01-01 00:00:00 UTC ដែលជាការបន្ទាន់សកលតែមួយ។ អ្នកគ្រាន់តែជ្រើសរើសតំបន់មួយដើម្បីបង្ហាញវាជាម៉ោងជញ្ជាំង។"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ហេតុអ្វីបានជាពេលវេលារបស់អតិថិជនខុសពីផ្នែកខាងក្រោយរបស់ខ្ញុំ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ជាធម្មតាមានគម្លាតតំបន់ពេលវេលា។ កម្មវិធីខាងក្រោយជារឿយៗប្រើម៉ោង UTC ឬប៉េកាំង ខណៈពេលដែលអតិថិជនប្រាប់ម៉ោងក្នុងស្រុករបស់ពួកគេ។ បម្លែងភ្លាមៗដូចគ្នាទៅជាតំបន់ទាំងពីរដើម្បីតម្រឹម។"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "តើការសន្សំពន្លឺថ្ងៃប៉ះពាល់ដល់ការបំប្លែងទេ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "បាទ។ ភាគខាងកើតសហរដ្ឋអាមេរិក ទីក្រុងឡុងដ៍ និងស៊ីដនីសង្កេតមើល DST ដូច្នេះគម្លាតរបស់ពួកគេពីទីក្រុងប៉េកាំងផ្លាស់ប្តូរតាមរដូវកាល។ ឧបករណ៍ប្រើប្រាស់ទិន្នន័យ IANA ដែលភ្ជាប់មកជាមួយកម្មវិធីរុករកតាមអ៊ីនធឺណិត ដើម្បីគ្រប់គ្រងវាដោយស្វ័យប្រវត្តិ។"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "តើឆ្នាំ 2038 មានបញ្ហាអ្វី?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ត្រាពេលវេលា 32-bit ដែលបានចុះហត្ថលេខានឹងចេញនៅ 2038-01-19 03:14:07 UTC ហើយបន្ទាប់មកលើស។ ប្រព័ន្ធទំនើបប្រើ 64-bit ដូច្នេះការគាំទ្រប្រចាំថ្ងៃមិនចាំបាច់ព្រួយបារម្ភ ប៉ុន្តែមើលកំណត់ហេតុប្រព័ន្ធចាស់ៗ។"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "តើឧបករណ៍ផ្ទុកទិន្នន័យរបស់ខ្ញុំទេ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ទេ។ រាល់ការបំប្លែងពេលវេលា និងតំបន់ពេលវេលាដំណើរការក្នុងមូលដ្ឋាននៅក្នុងកម្មវិធីរុករកតាមអ៊ីនធឺណិតរបស់អ្នក គ្មានអ្វីត្រូវបានផ្ទុកឡើង ឬរក្សាទុកទេ។"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "តើវាអាចបំប្លែងត្រាពេលវេលាមិល្លីវិនាទីបានទេ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "បាទ។ 13 ខ្ទង់ញែកជាមីលីវិនាទី, 10 ជាវិនាទី; អ្នកក៏អាចបិទភ្ជាប់កាលបរិច្ឆេទ ISO (ដូចជា 2026-06-30T12:00:00Z) ដើម្បីទទួលបានត្រាពេលវេលាត្រឡប់មកវិញ។"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <strong>ភាសាខ្មែរ</strong> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Unix Timestamp និង Multi-Time-Zone Converter</h1>
+<p class="byline"><a href="/km/about-editor/" rel="author">周明</a> · បានធ្វើបច្ចុប្បន្នភាព 2026-06</p>
+<p>ការគាំទ្រផ្នែកពាណិជ្ជកម្មតាមអេឡិចត្រូនិកជារឿយៗដោះស្រាយជាមួយការបោះត្រាពេលវេលារបស់ Unix នៅក្នុងកំណត់ហេតុនៃការបញ្ជាទិញ ហើយអតិថិជនបានរីករាលដាលនៅទូទាំងតំបន់ពេលវេលា។ នេះគឺជាឧបករណ៍បណ្ដាញសុទ្ធ៖ បំប្លែងត្រាពេលវេលា Unix និងកាលបរិច្ឆេទទាំងពីរវិធី ហើយមើលពេលវេលាបច្ចុប្បន្ននៅក្នុងតំបន់ទូទៅក្នុងពេលវេលាជាក់ស្តែង ដូច្នេះអ្នកអាចតម្រឹមការសន្ទនាតាមតំបន់ពេលវេលា និងបញ្ជាម៉ោងបានយ៉ាងឆាប់រហ័ស។ អ្វីគ្រប់យ៉ាងដំណើរការក្នុងមូលដ្ឋាននៅក្នុងកម្មវិធីរុករករបស់អ្នក - គ្មានអ្វីត្រូវបានផ្ទុកឡើង ឬដំឡើងទេ។</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="Yi Waiwai ត្រាពេលវេលា និងបដាកម្មវិធីបម្លែងតំបន់ពេលវេលា" width="1120" height="360" fetchpriority="high"></picture><figcaption>បំលែងត្រាពេលវេលា និងតំបន់ពេលវេលារបស់ Unix លើអ៊ីនធឺណិតសម្រាប់ការគាំទ្រពាណិជ្ជកម្មអេឡិចត្រូនិកឆ្លងព្រំដែន</figcaption></figure>
+<h2>បំប្លែងកាលបរិច្ឆេទ ឬកាលបរិច្ឆេទ</h2><p>បិទភ្ជាប់ត្រាពេលវេលាយូនីក (10 ខ្ទង់សម្រាប់វិនាទី 13 សម្រាប់មីលីវិនាទី) ឬកាលបរិច្ឆេទ ISO ទៅក្នុងប្រអប់ខាងក្រោម ហើយបំប្លែង។ តារាងខាងលើបង្ហាញពីពេលវេលាបច្ចុប្បន្ននៅទូទាំងតំបន់ពេលវេលាដែលជារឿងធម្មតាបំផុតនៅក្នុងការគាំទ្រពាណិជ្ជកម្មអេឡិចត្រូនិកឆ្លងព្រំដែន។</p>
+<div class="rk"><div id="clk-out">ការអានតំបន់ពេលវេលា...</div><div class="conv"><input id="ts-in" placeholder="បញ្ចូលត្រាពេលវេលា ឬកាលបរិច្ឆេទរបស់ Unix ឧ. 1000000000" autocomplete="off"><button id="conv-go">បម្លែង</button></div><div id="conv-out"></div></div>
+<h2>តើត្រាពេលវេលាយូនីកជាអ្វី និងរបៀបដែលវាបំប្លែង</h2><p>ត្រាពេលវេលា Unix គឺជាចំនួននៃវិនាទីដែលមិនលោតចាប់តាំងពីសម័យ UTC ថ្ងៃទី 1 ខែមករា ឆ្នាំ 1970 00:00:00 ដោយរាប់ 86400 វិនាទីក្នុងមួយថ្ងៃ។ ឧទាហរណ៍ 1000000000 គឺ 2001-09-09 01:46:40 UTC ។ ចំណាំថាត្រាពេលវេលា 32-bit ដែលបានចុះហត្ថលេខាលើសលើ 2038-01-19 03:14:07 UTC (បញ្ហាឆ្នាំ 2038) ។</p>
+<table><tr><th>គំនិត</th><th>លម្អិត</th></tr><tr><td>សម័យ</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>ការរាប់</td><td>វិនាទីដែលមិនបង្គ្រប់ចាប់តាំងពីសម័យនោះ 86400 ក្នុងមួយថ្ងៃ</td></tr><tr><td>ឧទាហរណ៍</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>2038 បញ្ហា</td><td>ហត្ថលេខា 32-bit លើសនៅ 2038-01-19 03:14:07 UTC</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>រូបភាពទី 1៖ លំហូរការបំប្លែងកាលបរិច្ឆេទត្រាពេល - បញ្ចូលត្រាពេលវេលា ឬកាលបរិច្ឆេទ ទទួលបាន UTC និងដងក្នុងមួយតំបន់។</figcaption></figure>
+<h2>តំបន់ពេលវេលាទូទៅនៅក្នុងការគាំទ្រ e-commerce</h2><p>ខាងក្រោម​នេះ​ជា​តំបន់​ពេលវេលា​ដែល​ទាក់ទង​នឹង​ការ​គាំទ្រ​ឆ្លង​ព្រំដែន​ភាគច្រើន​ជាមួយ​នឹង​ឈ្មោះ IANA របស់​ពួកគេ។ ឧបករណ៍ប្រើប្រាស់មូលដ្ឋានទិន្នន័យតំបន់ពេលវេលាដែលភ្ជាប់មកជាមួយកម្មវិធីរុករកតាមអ៊ីនធឺណិតដើម្បីបំប្លែងតាមពេលវេលាជាក់ស្តែង (គ្រប់គ្រងការរក្សាទុកពន្លឺថ្ងៃដោយស្វ័យប្រវត្តិ) ដូច្នេះអ្នកមិនត្រូវបន្ថែម ឬដកអុហ្វសិតដោយដៃឡើយ។ គូសផែនទីទីក្រុងអតិថិជនទៅកាន់តំបន់មួយក្នុងចំណោមតំបន់ទាំងនេះ ដើម្បីដឹងពីម៉ោងក្នុងស្រុករបស់ពួកគេ។</p>
+<table><tr><th>តំបន់</th><th>តំបន់ពេលវេលា IANA</th><th>អុហ្វសិតធម្មតា។</th></tr><tr><td>ប៉េកាំង/ចិន</td><td>Asia/Shanghai</td><td>UTC+8 (ពេញមួយឆ្នាំ)</td></tr><tr><td>សំរបសំរួលម៉ោងសកល</td><td>UTC</td><td>UTC+0</td></tr><tr><td>អាមេរិកខាងកើត</td><td>America/New_York</td><td>UTC-5 / -4 (DST)</td></tr><tr><td>ប៉ាស៊ីហ្វិកអាមេរិក</td><td>America/Los_Angeles</td><td>UTC-8 / -7 (DST)</td></tr><tr><td>ទីក្រុងឡុងដ៍</td><td>Europe/London</td><td>UTC+0 / +1 (DST)</td></tr><tr><td>តូក្យូ</td><td>Asia/Tokyo</td><td>UTC+9 (ពេញមួយឆ្នាំ)</td></tr><tr><td>ហ្សាកាតា</td><td>Asia/Jakarta</td><td>UTC+7 (ពេញមួយឆ្នាំ)</td></tr><tr><td>ស៊ីដនី</td><td>Australia/Sydney</td><td>UTC+10 / +11 (DST)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>រូបភាពទី 2៖ អុហ្វសិត UTC នៃតំបន់ទូទៅ (ការបំប្លែងពិតប្រាកដត្រូវបានគ្រប់គ្រងដោយកម្មវិធីរុករកតាមអ៊ីនធឺណិតជាមួយ DST) ។</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="តំបន់ពេលវេលាគាំទ្រពាណិជ្ជកម្មអេឡិចត្រូនិកទូទៅ និងតារាងអុហ្វសិត UTC" width="1120" height="560" loading="lazy"></picture><figcaption>តំបន់ពេលវេលាដែលជារឿងធម្មតានៅក្នុងការគាំទ្រឆ្លងព្រំដែន ជាមួយនឹង UTC អុហ្វសិតភ្លាមៗ</figcaption></figure>
+<section id="data2026">
+<h2>តំបន់ពេលវេលាសកលឆ្នាំ 2026 និងទិដ្ឋភាពទូទៅ DST (ប៉ាន់ស្មាន)</h2><p>សម្រាប់ជំនួយឆ្លងកាត់ព្រំដែន វាជួយឱ្យដឹងពីទេសភាព៖ គិតត្រឹមឆ្នាំ 2026 ប្រហែលមួយភាគបីនៃបណ្តាប្រទេសពិភពលោកសង្កេតមើលពេលវេលាសន្សំពន្លឺថ្ងៃ (ប្រហែល 34% ក្នុងឆ្នាំ 2023) ដែលប្រមូលផ្តុំនៅអឺរ៉ុប និងអាមេរិកខាងជើង ខណៈដែលអាស៊ី និងទ្វីបអាហ្រ្វិកភាគច្រើនមិនមាន - ដូច្នេះអុហ្វសិតរបស់ពួកគេពីប្រទេសចិននៅថេរពេញមួយឆ្នាំ។ អុហ្វសិត UTC សកល វិសាលភាព UTC-12 to UTC+14 ។</p>
+<table><tr><th>គំនិត</th><th>2026</th></tr><tr><td>ប្រទេសដែលឃ្លាំមើល DST (2023)</td><td>≈ 34%</td></tr><tr><td>ជួរអុហ្វសិត UTC សកល</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>សម័យយូនីក</td><td>1970-01-01 UTC</td></tr><tr><td>2038 ពេលហៀរ</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">ការប៉ាន់ស្មាន មិនមែនដោយដៃផ្ទាល់ទេ៖ ការចែករំលែក DST គឺមកពីវិគីភីឌា (អំពី 34% ក្នុងឆ្នាំ 2023); តំបន់ពេលវេលា និងអុហ្វសិតអនុវត្តតាមមូលដ្ឋានទិន្នន័យតំបន់ពេលវេលា IANA ។ កាលបរិច្ឆេទចាប់ផ្តើម និងកាលបរិច្ឆេទបញ្ចប់របស់ DST ផ្លាស់ប្តូរបន្តិចបន្តួចជារៀងរាល់ឆ្នាំ ដូច្នេះជឿជាក់លើឧបករណ៍ (ទិន្នន័យរបស់កម្មវិធីរុករកតាមអ៊ីនធឺណិត IANA) សម្រាប់ការបំប្លែងពិតប្រាកដ។</p></section>
+<div class="cta"><h2>ទាញយក Yi Waiwai</h2><p>ត្រូវការការឆ្លើយតបរហ័ស និងការគ្រប់គ្រងស្គ្រីបលឿនជាងមុនសម្រាប់ការគាំទ្រពាណិជ្ជកម្មអេឡិចត្រូនិកមែនទេ? ទាញយកកម្មវិធីផ្ទៃតុ Yi Waiwai ពីទំព័រទាញយកផ្លូវការ៖</p><a class="dl" href="https://yiwaiwaiservice.com/download/">ទាញយក Yi Waiwai (ផ្លូវការ)</a></div>
+<h2>សំណួរដែលគេសួរញឹកញាប់</h2><details><summary>តើខ្ញុំបំប្លែងត្រាពេលវេលាយូនីកទៅជាកាលបរិច្ឆេទដោយរបៀបណា?</summary><p>បិទភ្ជាប់ត្រាពេលវេលាទៅក្នុងប្រអប់ខាងលើ ហើយបំប្លែង។ 10 ខ្ទង់គឺជាវិនាទី 13 គឺជាមីលីវិនាទី; ឧបករណ៍នេះបង្ហាញពីពេលវេលាដែលត្រូវគ្នានៅក្នុង UTC និងតំបន់ដូចជាទីក្រុងប៉េកាំង និងអាមេរិកខាងកើត។</p></details><details><summary>តើ​តំបន់​ពេលវេលា​មួយ​ណា​ជា​ត្រា​ពេលវេលា​នៅ​ក្នុង​?</summary><p>ត្រាពេលវេលា Unix មិនមានតំបន់ពេលវេលាទេ - វាជាចំនួនវិនាទីចាប់តាំងពី 1970-01-01 00:00:00 UTC ដែលជាការបន្ទាន់សកលតែមួយ។ អ្នកគ្រាន់តែជ្រើសរើសតំបន់មួយដើម្បីបង្ហាញវាជាម៉ោងជញ្ជាំង។</p></details><details><summary>ហេតុអ្វីបានជាពេលវេលារបស់អតិថិជនខុសពីផ្នែកខាងក្រោយរបស់ខ្ញុំ?</summary><p>ជាធម្មតាមានគម្លាតតំបន់ពេលវេលា។ កម្មវិធីខាងក្រោយជារឿយៗប្រើម៉ោង UTC ឬប៉េកាំង ខណៈពេលដែលអតិថិជនប្រាប់ម៉ោងក្នុងស្រុករបស់ពួកគេ។ បម្លែងភ្លាមៗដូចគ្នាទៅជាតំបន់ទាំងពីរដើម្បីតម្រឹម។</p></details><details><summary>តើការសន្សំពន្លឺថ្ងៃប៉ះពាល់ដល់ការបំប្លែងទេ?</summary><p>បាទ។ ភាគខាងកើតសហរដ្ឋអាមេរិក ទីក្រុងឡុងដ៍ និងស៊ីដនីសង្កេតមើល DST ដូច្នេះគម្លាតរបស់ពួកគេពីទីក្រុងប៉េកាំងផ្លាស់ប្តូរតាមរដូវកាល។ ឧបករណ៍ប្រើប្រាស់ទិន្នន័យ IANA ដែលភ្ជាប់មកជាមួយកម្មវិធីរុករកតាមអ៊ីនធឺណិត ដើម្បីគ្រប់គ្រងវាដោយស្វ័យប្រវត្តិ។</p></details><details><summary>តើឆ្នាំ 2038 មានបញ្ហាអ្វី?</summary><p>ត្រាពេលវេលា 32-bit ដែលបានចុះហត្ថលេខានឹងចេញនៅ 2038-01-19 03:14:07 UTC ហើយបន្ទាប់មកលើស។ ប្រព័ន្ធទំនើបប្រើ 64-bit ដូច្នេះការគាំទ្រប្រចាំថ្ងៃមិនចាំបាច់ព្រួយបារម្ភ ប៉ុន្តែមើលកំណត់ហេតុប្រព័ន្ធចាស់ៗ។</p></details><details><summary>តើឧបករណ៍ផ្ទុកទិន្នន័យរបស់ខ្ញុំទេ?</summary><p>ទេ។ រាល់ការបំប្លែងពេលវេលា និងតំបន់ពេលវេលាដំណើរការក្នុងមូលដ្ឋាននៅក្នុងកម្មវិធីរុករកតាមអ៊ីនធឺណិតរបស់អ្នក គ្មានអ្វីត្រូវបានផ្ទុកឡើង ឬរក្សាទុកទេ។</p></details><details><summary>តើវាអាចបំប្លែងត្រាពេលវេលាមិល្លីវិនាទីបានទេ?</summary><p>បាទ។ 13 ខ្ទង់ញែកជាមីលីវិនាទី, 10 ជាវិនាទី; អ្នកក៏អាចបិទភ្ជាប់កាលបរិច្ឆេទ ISO (ដូចជា 2026-06-30T12:00:00Z) ដើម្បីទទួលបានត្រាពេលវេលាត្រឡប់មកវិញ។</p></details>
+<h2>ការត្រួតពិនិត្យពិភពពិតរហ័ស</h2><ul class="scenes"><li>អតិថិជននៅក្រៅប្រទេសសួរនៅពេលដែលការបញ្ជាទិញរបស់ពួកគេត្រូវបានដឹកជញ្ជូន៖ ផ្នែកខាងក្រោយរក្សាទុកត្រាពេលវេលា UTC; បំប្លែងវាទៅតំបន់អតិថិជន ហើយប្រាប់ពួកគេម៉ោងក្នុងស្រុករបស់ពួកគេ ដើម្បីជៀសវាងការភ័ន្តច្រឡំ។</li><li>កំណត់ពេលការផ្សាយផ្ទាល់ ឬលក់តាមតំបន់ឆ្លងម៉ោង៖ បំប្លែងម៉ោងនៅទីក្រុងប៉េកាំងទៅជាសហរដ្ឋអាមេរិកខាងកើត និងទីក្រុងឡុងដ៍ ដើម្បីបញ្ជាក់អំពីដំណើរការរន្ធដោតក្នុងតំបន់។</li><li>ការដោះស្រាយបញ្ហាកំណត់ហេតុ៖ ការបញ្ជាទិញ API ត្រឡប់ត្រាពេលវេលា 10 ខ្ទង់។ បិទភ្ជាប់វាដើម្បីអានពេលវេលារបស់មនុស្ស និងកំណត់ពេលវេលាពិតប្រាកដ។</li><li>អតិថិជននិយាយថាវាជាថ្ងៃបន្ទាប់រួចហើយ៖ ឆ្លងកាត់អុហ្វសិតធំៗ ឬបន្ទាត់កាលបរិច្ឆេទ សូមបញ្ជាក់កាលបរិច្ឆេទក្នុងតំបន់នីមួយៗ ដើម្បីកុំឱ្យអ្នកដកស្រង់ថ្ងៃខុស។</li></ul>
+<div class="related"><h2>ពាក់ព័ន្ធ</h2><ul>
+<li><a href="/km/about-editor/">អំពីអ្នកនិពន្ធ: Zhou Ming</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>ត្រាពេលវេលា និងការពិតអំពីតំបន់ពេលវេលាដែលបានចងក្រងពីវិគីភីឌា (ម៉ោងយូនីក ពេលវេលាសន្សំពន្លឺថ្ងៃ) និងមូលដ្ឋានទិន្នន័យតំបន់ពេលវេលា IANA ។ ការបំប្លែងប្រើ API របស់កម្មវិធីរុករកតាមអ៊ីនធឺណិតស្តង់ដារ (Date / Intl) ហើយសម្រាប់តែឯកសារយោងប៉ុណ្ណោះ។<br>ដោយ 周明 · កម្មវិធីនិពន្ធមាតិកា · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "ត្រាពេលវេលា Unix បច្ចុប្បន្ន", "local_tz": "តំបន់ពេលវេលារបស់អ្នក។", "region": "តំបន់", "tz_name": "តំបន់ពេលវេលា IANA", "local_time": "ម៉ោងក្នុងស្រុក", "detecting": "ការអានតំបន់ពេលវេលា...", "unix_ts": "ត្រាពេលវេលា Unix", "bad_input": "មិនអាចញែកបានទេ - បញ្ចូលត្រាពេលវេលា Unix (10/13 ខ្ទង់) ឬកាលបរិច្ឆេទ", "convert": "បម្លែង", "ph": "បញ្ចូលត្រាពេលវេលា ឬកាលបរិច្ឆេទរបស់ Unix ឧ. 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
