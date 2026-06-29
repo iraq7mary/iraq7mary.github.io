@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iraq7mary.github.io/sitemap.xml
