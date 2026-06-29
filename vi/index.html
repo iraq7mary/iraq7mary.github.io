@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bộ chuyển đổi dấu thời gian và múi giờ Unix - hỗ trợ nhiều vùng cho đến thời điểm hiện tại</title>
+<meta name="description" content="Một công cụ web thuần túy: chuyển đổi dấu thời gian Unix thành ngày và ngược lại, đồng thời đọc thời gian hiện tại trên khắp Bắc Kinh, UTC, Miền Đông Hoa Kỳ và Thái Bình Dương, London và Tokyo. Được xây dựng để phục vụ dịch vụ khách hàng thương mại điện tử xử lý các đơn đặt hàng theo múi giờ và khách hàng nước ngoài. Chạy cục bộ, không có gì được tải lên.">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Bộ chuyển đổi dấu thời gian và múi giờ Unix - hỗ trợ nhiều vùng cho đến thời điểm hiện tại">
+<meta property="og:description" content="Một công cụ web thuần túy: chuyển đổi dấu thời gian Unix thành ngày và ngược lại, đồng thời đọc thời gian hiện tại trên khắp Bắc Kinh, UTC, Miền Đông Hoa Kỳ và Thái Bình Dương, London và Tokyo. Được xây dựng để phục vụ dịch vụ khách hàng thương mại điện tử xử lý các đơn đặt hàng theo múi giờ và khách hàng nước ngoài. Chạy cục bộ, không có gì được tải lên.">
+<meta property="og:locale" content="vi_VN"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Bộ chuyển đổi dấu thời gian Unix và đa múi giờ",
+   "url": "https://iraq7mary.github.io/vi/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "vi",
+   "description": "Một công cụ web thuần túy: chuyển đổi dấu thời gian Unix thành ngày và ngược lại, đồng thời đọc thời gian hiện tại trên khắp Bắc Kinh, UTC, Miền Đông Hoa Kỳ và Thái Bình Dương, London và Tokyo. Được xây dựng để phục vụ dịch vụ khách hàng thương mại điện tử xử lý các đơn đặt hàng theo múi giờ và khách hàng nước ngoài. Chạy cục bộ, không có gì được tải lên.",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/vi/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "vi",
+   "url": "https://iraq7mary.github.io/vi/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Làm cách nào để chuyển đổi dấu thời gian Unix thành ngày?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dán dấu thời gian vào hộp bên trên và chuyển đổi. 10 chữ số là giây, 13 là mili giây; công cụ này hiển thị thời gian phù hợp theo giờ UTC và các khu vực như Bắc Kinh và Miền Đông Hoa Kỳ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Dấu thời gian nằm ở múi giờ nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dấu thời gian Unix không có múi giờ - đó là số giây kể từ 1970-01-01 00:00:00 UTC, một khoảnh khắc toàn cầu duy nhất; bạn chỉ chọn một vùng để hiển thị nó dưới dạng thời gian trên đồng hồ treo tường."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Tại sao thời gian của khách hàng khác với thời gian phụ trợ của tôi?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Thường là một khoảng cách múi giờ. Phần phụ trợ thường sử dụng giờ UTC hoặc giờ Bắc Kinh, trong khi khách hàng nêu giờ địa phương của họ. Chuyển đổi tức thời giống nhau thành cả hai vùng để căn chỉnh."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Tiết kiệm ánh sáng ban ngày có ảnh hưởng đến chuyển đổi không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Đúng. US Eastern, London và Sydney tuân theo DST, vì vậy khoảng cách của họ với Bắc Kinh thay đổi theo mùa. Công cụ này sử dụng dữ liệu IANA tích hợp trong trình duyệt để xử lý tự động."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Vấn đề năm 2038 là gì?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dấu thời gian 32-bit đã ký đạt tối đa 2038-01-19 03:14:07 UTC và sau đó tràn. Các hệ thống hiện đại sử dụng 64-bit, vì vậy bộ phận hỗ trợ hàng ngày không cần phải lo lắng mà hãy xem nhật ký hệ thống cũ hơn."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Công cụ này có tải lên dữ liệu của tôi không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Không. Tất cả chuyển đổi dấu thời gian và múi giờ đều chạy cục bộ trong trình duyệt của bạn - không có gì được tải lên hoặc lưu trữ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Nó có thể chuyển đổi dấu thời gian mili giây không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Đúng. 13 chữ số được phân tích dưới dạng mili giây, 10 dưới dạng giây; bạn cũng có thể dán ngày ISO (chẳng hạn như 2026-06-30T12:00:00Z) để lấy lại dấu thời gian."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <strong>Tiếng Việt</strong> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Bộ chuyển đổi dấu thời gian Unix và đa múi giờ</h1>
+<p class="byline"><a href="/vi/about-editor/" rel="author">周明</a> · Cập nhật 2026-06</p>
+<p>Bộ phận hỗ trợ thương mại điện tử thường xử lý dấu thời gian Unix trong nhật ký đơn hàng và khách hàng trải rộng trên các múi giờ. Đây là một công cụ web thuần túy: chuyển đổi dấu thời gian và ngày tháng của Unix theo cả hai cách, đồng thời xem thời gian hiện tại ở các vùng chung trong thời gian thực, do đó bạn có thể căn chỉnh các cuộc hội thoại và thời gian đặt hàng giữa các múi giờ một cách nhanh chóng. Mọi thứ chạy cục bộ trong trình duyệt của bạn - không có gì được tải lên hoặc cài đặt.</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="Biểu ngữ chuyển đổi múi giờ và dấu thời gian Yi Waiwai" width="1120" height="360" fetchpriority="high"></picture><figcaption>Chuyển đổi dấu thời gian và múi giờ Unix trực tuyến để hỗ trợ thương mại điện tử xuyên biên giới</figcaption></figure>
+<h2>Chuyển đổi dấu thời gian hoặc ngày</h2><p>Dán dấu thời gian Unix (10 chữ số cho giây, 13 cho mili giây) hoặc ngày ISO vào hộp bên dưới và chuyển đổi. Bảng trên hiển thị thời gian hiện tại theo các múi giờ phổ biến nhất trong hỗ trợ thương mại điện tử xuyên biên giới.</p>
+<div class="rk"><div id="clk-out">Đọc múi giờ...</div><div class="conv"><input id="ts-in" placeholder="Nhập dấu thời gian hoặc ngày của Unix, ví dụ: 1000000000" autocomplete="off"><button id="conv-go">Chuyển đổi</button></div><div id="conv-out"></div></div>
+<h2>Dấu thời gian Unix là gì và nó chuyển đổi như thế nào</h2><p>Dấu thời gian Unix là số giây không nhuận kể từ kỷ nguyên UTC, ngày 1 tháng 1 năm 1970 00:00:00, tính 86400 giây mỗi ngày. Ví dụ: 1000000000 là 2001-09-09 01:46:40 UTC. Lưu ý rằng dấu thời gian 32-bit đã ký tràn trên 2038-01-19 03:14:07 UTC (vấn đề 2038).</p>
+<table><tr><th>Khái niệm</th><th>Chi tiết</th></tr><tr><td>kỷ nguyên</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>Đếm</td><td>Số giây không nhuận kể từ kỷ nguyên, 86400 mỗi ngày</td></tr><tr><td>Ví dụ</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>vấn đề năm 2038</td><td>32-bit đã ký tràn tại 2038-01-19 03:14:07 UTC</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>Hình 1: luồng chuyển đổi dấu thời gian-ngày - nhập dấu thời gian hoặc ngày, nhận UTC và thời gian trên mỗi vùng.</figcaption></figure>
+<h2>Múi giờ phổ biến trong hỗ trợ thương mại điện tử</h2><p>Dưới đây là hầu hết các giao dịch hỗ trợ xuyên biên giới theo múi giờ, kèm theo tên IANA của chúng. Công cụ này sử dụng cơ sở dữ liệu múi giờ tích hợp trong trình duyệt để chuyển đổi theo thời gian thực (tự động xử lý việc tiết kiệm ánh sáng ban ngày), do đó bạn không bao giờ thêm hoặc trừ các độ lệch bằng tay. Lập bản đồ thành phố của khách hàng tới một trong những khu vực này để biết giờ địa phương của họ.</p>
+<table><tr><th>Vùng</th><th>Múi giờ IANA</th><th>Độ lệch điển hình</th></tr><tr><td>Bắc Kinh / Trung Quốc</td><td>Asia/Shanghai</td><td>UTC+8 (cả năm)</td></tr><tr><td>Giờ phối hợp quốc tế</td><td>UTC</td><td>UTC+0</td></tr><tr><td>Miền Đông nước Mỹ</td><td>America/New_York</td><td>UTC-5 / -4 (DST)</td></tr><tr><td>Hoa Kỳ Thái Bình Dương</td><td>America/Los_Angeles</td><td>UTC-8 / -7 (DST)</td></tr><tr><td>Luân Đôn</td><td>Europe/London</td><td>UTC+0 / +1 (DST)</td></tr><tr><td>Tokyo</td><td>Asia/Tokyo</td><td>UTC+9 (cả năm)</td></tr><tr><td>Jakarta</td><td>Asia/Jakarta</td><td>UTC+7 (cả năm)</td></tr><tr><td>Sydney</td><td>Australia/Sydney</td><td>UTC+10 / +11 (DST)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>Hình 2: Độ lệch UTC của các vùng chung (chuyển đổi thực tế được trình duyệt xử lý bằng DST).</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="Các múi giờ hỗ trợ thương mại điện tử phổ biến và biểu đồ bù trừ UTC" width="1120" height="560" loading="lazy"></picture><figcaption>Các múi giờ phổ biến trong hỗ trợ xuyên biên giới, sơ lược về chênh lệch UTC</figcaption></figure>
+<section id="data2026">
+<h2>Tổng quan về múi giờ toàn cầu và DST năm 2026 (ước tính)</h2><p>Để hỗ trợ xuyên biên giới, cần biết bối cảnh: tính đến năm 2026, khoảng một phần ba số quốc gia trên thế giới tuân thủ giờ tiết kiệm ánh sáng ban ngày (khoảng 34% vào năm 2023), tập trung ở Châu Âu và Bắc Mỹ, trong khi hầu hết Châu Á và Châu Phi xích đạo thì không - vì vậy phần bù của họ từ Trung Quốc không thay đổi trong cả năm. Sự bù đắp UTC toàn cầu trải dài UTC-12 to UTC+14.</p>
+<table><tr><th>Khái niệm</th><th>2026</th></tr><tr><td>Các quốc gia áp dụng DST (2023)</td><td>≈ 34%</td></tr><tr><td>Phạm vi bù UTC toàn cầu</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>kỷ nguyên Unix</td><td>1970-01-01 UTC</td></tr><tr><td>khoảnh khắc tràn 2038</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">Ước tính, không phải trực tiếp: chia sẻ DST là từ Wikipedia (khoảng 34% vào năm 2023); múi giờ và độ lệch tuân theo cơ sở dữ liệu múi giờ IANA; Ngày bắt đầu và kết thúc DST thay đổi đôi chút mỗi năm, vì vậy hãy tin tưởng vào công cụ (dữ liệu IANA của trình duyệt) để có chuyển đổi thực tế.</p></section>
+<div class="cta"><h2>Tải xuống Yi Waiwai</h2><p>Cần trả lời nhanh hơn và quản lý tập lệnh để hỗ trợ thương mại điện tử? Tải ứng dụng máy tính để bàn Yi Waiwai từ trang tải xuống chính thức:</p><a class="dl" href="https://yiwaiwaiservice.com/download/">Tải xuống Yi Waiwai (chính thức)</a></div>
+<h2>Câu hỏi thường gặp</h2><details><summary>Làm cách nào để chuyển đổi dấu thời gian Unix thành ngày?</summary><p>Dán dấu thời gian vào hộp bên trên và chuyển đổi. 10 chữ số là giây, 13 là mili giây; công cụ này hiển thị thời gian phù hợp theo giờ UTC và các khu vực như Bắc Kinh và Miền Đông Hoa Kỳ.</p></details><details><summary>Dấu thời gian nằm ở múi giờ nào?</summary><p>Dấu thời gian Unix không có múi giờ - đó là số giây kể từ 1970-01-01 00:00:00 UTC, một khoảnh khắc toàn cầu duy nhất; bạn chỉ chọn một vùng để hiển thị nó dưới dạng thời gian trên đồng hồ treo tường.</p></details><details><summary>Tại sao thời gian của khách hàng khác với thời gian phụ trợ của tôi?</summary><p>Thường là một khoảng cách múi giờ. Phần phụ trợ thường sử dụng giờ UTC hoặc giờ Bắc Kinh, trong khi khách hàng nêu giờ địa phương của họ. Chuyển đổi tức thời giống nhau thành cả hai vùng để căn chỉnh.</p></details><details><summary>Tiết kiệm ánh sáng ban ngày có ảnh hưởng đến chuyển đổi không?</summary><p>Đúng. US Eastern, London và Sydney tuân theo DST, vì vậy khoảng cách của họ với Bắc Kinh thay đổi theo mùa. Công cụ này sử dụng dữ liệu IANA tích hợp trong trình duyệt để xử lý tự động.</p></details><details><summary>Vấn đề năm 2038 là gì?</summary><p>Dấu thời gian 32-bit đã ký đạt tối đa 2038-01-19 03:14:07 UTC và sau đó tràn. Các hệ thống hiện đại sử dụng 64-bit, vì vậy bộ phận hỗ trợ hàng ngày không cần phải lo lắng mà hãy xem nhật ký hệ thống cũ hơn.</p></details><details><summary>Công cụ này có tải lên dữ liệu của tôi không?</summary><p>Không. Tất cả chuyển đổi dấu thời gian và múi giờ đều chạy cục bộ trong trình duyệt của bạn - không có gì được tải lên hoặc lưu trữ.</p></details><details><summary>Nó có thể chuyển đổi dấu thời gian mili giây không?</summary><p>Đúng. 13 chữ số được phân tích dưới dạng mili giây, 10 dưới dạng giây; bạn cũng có thể dán ngày ISO (chẳng hạn như 2026-06-30T12:00:00Z) để lấy lại dấu thời gian.</p></details>
+<h2>Kiểm tra thực tế nhanh chóng</h2><ul class="scenes"><li>Một khách hàng nước ngoài hỏi khi nào đơn hàng của họ được giao: hệ thống phụ trợ lưu dấu thời gian UTC; chuyển đổi nó sang khu vực khách hàng và cho họ biết giờ địa phương của họ để tránh nhầm lẫn.</li><li>Lên lịch phát trực tiếp hoặc bán hàng theo múi giờ khác nhau: chuyển đổi giờ Bắc Kinh sang Miền Đông Hoa Kỳ và Luân Đôn để xác nhận vị trí địa phương hoạt động.</li><li>Khắc phục sự cố nhật ký: API đơn hàng trả về dấu thời gian gồm 10 chữ số; dán nó vào để đọc thời gian của con người và xác định thời điểm chính xác.</li><li>Một khách hàng nói rằng đã đến ngày hôm sau: trên các khoảng chênh lệch lớn hoặc dòng ngày, hãy xác nhận từng bên ngày địa phương để bạn không báo giá sai ngày.</li></ul>
+<div class="related"><h2>Liên quan</h2><ul>
+<li><a href="/vi/about-editor/">Về tác giả: Zhou Ming</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>Thông tin về dấu thời gian và múi giờ được tổng hợp từ Wikipedia (thời gian Unix, giờ tiết kiệm ánh sáng ban ngày) và cơ sở dữ liệu múi giờ IANA; chuyển đổi sử dụng API trình duyệt tiêu chuẩn (Date / Intl) và chỉ mang tính chất tham khảo.<br>Bởi 周明 · biên tập nội dung · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "Dấu thời gian Unix hiện tại", "local_tz": "Múi giờ của bạn", "region": "Vùng", "tz_name": "Múi giờ IANA", "local_time": "Giờ địa phương", "detecting": "Đọc múi giờ...", "unix_ts": "Dấu thời gian Unix", "bad_input": "Không thể phân tích cú pháp - nhập dấu thời gian Unix (10/13 chữ số) hoặc ngày", "convert": "Chuyển đổi", "ph": "Nhập dấu thời gian hoặc ngày của Unix, ví dụ: 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
