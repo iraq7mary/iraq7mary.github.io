@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unixタイムスタンプ変換 - タイムスタンプ↔日付・多時区(越境ECサポート向け)</title>
+<meta name="description" content="開くだけのWebツール:Unixタイムスタンプと日付を相互変換し、北京/UTC/米東部・西部/ロンドン/東京などの現在時刻をリアルタイム表示。越境ECの時差対応・海外顧客対応に。ブラウザ内で処理しアップロードしません。">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unixタイムスタンプ変換 - タイムスタンプ↔日付・多時区(越境ECサポート向け)">
+<meta property="og:description" content="開くだけのWebツール:Unixタイムスタンプと日付を相互変換し、北京/UTC/米東部・西部/ロンドン/東京などの現在時刻をリアルタイム表示。越境ECの時差対応・海外顧客対応に。ブラウザ内で処理しアップロードしません。">
+<meta property="og:locale" content="ja_JP"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Unixタイムスタンプと多タイムゾーンのオンライン変換",
+   "url": "https://iraq7mary.github.io/ja/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "ja",
+   "description": "開くだけのWebツール:Unixタイムスタンプと日付を相互変換し、北京/UTC/米東部・西部/ロンドン/東京などの現在時刻をリアルタイム表示。越境ECの時差対応・海外顧客対応に。ブラウザ内で処理しアップロードしません。",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/ja/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ja",
+   "url": "https://iraq7mary.github.io/ja/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Unixタイムスタンプを日付に変換するには？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "上の入力欄にタイムスタンプを貼り付けて変換します。10桁は秒、13桁はミリ秒で、UTCと北京・米東部などの対応時刻を表示します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "タイムスタンプはどのタイムゾーン？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Unixタイムスタンプにタイムゾーンはありません。1970-01-01 00:00:00 UTCからの秒数で、世界共通の瞬間です。何時何分に直すときにだけゾーンを指定します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "顧客の時刻と管理画面が違うのはなぜ？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "多くは時差です。管理画面はUTCや北京時間、顧客は現地時間で話します。同じ瞬間を両方のゾーンに変換すれば一致します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "夏時間は変換に影響する？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "します。米東部・ロンドン・シドニーは夏時間があり、北京との時差は季節で変わります。ツールはブラウザ内蔵のIANAデータで自動処理します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "2038年問題とは？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "符号付き32ビットのタイムスタンプは2038-01-19 03:14:07 UTCが上限で、その後桁あふれします。最近の系は64ビットなので通常は心配不要ですが、古い系のログは注意。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ツールはデータをアップロードする？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "しません。タイムスタンプとタイムゾーンの変換はすべてブラウザ内で完結し、アップロードも保存もしません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ミリ秒のタイムスタンプも変換できる？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "できます。13桁はミリ秒、10桁は秒として解釈します。ISO日付(例:2026-06-30T12:00:00Z)を貼って逆引きもできます。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <strong>日本語</strong> · <a href="/zh-tw/">繁體中文</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Unixタイムスタンプと多タイムゾーンのオンライン変換</h1>
+<p class="byline"><a href="/ja/about-editor/" rel="author">周明</a> · 2026-06 更新</p>
+<p>ECのカスタマーサポートでは、注文ログのUnixタイムスタンプや、時差のある海外顧客への対応がつきものです。本ツールはインストール不要のWebツールで、Unixタイムスタンプと日付を相互変換し、主要タイムゾーンの現在時刻をリアルタイム表示します。時差をまたぐやり取りや注文時刻の確認がすぐできます。すべてブラウザ内で処理し、アップロードもインストールもしません。</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="易歪歪 タイムスタンプ・タイムゾーン変換ツールのバナー" width="1120" height="360" fetchpriority="high"></picture><figcaption>Unixタイムスタンプとタイムゾーンをオンライン変換、越境ECサポートに</figcaption></figure>
+<h2>タイムスタンプ・日付を変換</h2><p>下の入力欄にUnixタイムスタンプ(10桁=秒、13桁=ミリ秒)またはISO日付を貼り付けて変換します。上の表は越境ECサポートでよく使うタイムゾーンの現在時刻を表示します。</p>
+<div class="rk"><div id="clk-out">タイムゾーンを読み取り中…</div><div class="conv"><input id="ts-in" placeholder="Unixタイムスタンプか日付を入力 例: 1000000000" autocomplete="off"><button id="conv-go">変換</button></div><div id="conv-out"></div></div>
+<h2>Unixタイムスタンプとは・どう変換する</h2><p>Unixタイムスタンプは、UTCの紀元1970年1月1日00:00:00からの非うるう秒の経過秒数で、1日を86400秒として数えます。例えば1000000000は2001-09-09 01:46:40 UTCです。符号付き32ビットのタイムスタンプは2038-01-19 03:14:07 UTCに桁あふれします(2038年問題)。</p>
+<table><tr><th>概念</th><th>説明</th></tr><tr><td>紀元 Epoch</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>数え方</td><td>紀元からの非うるう秒、1日86400秒</td></tr><tr><td>例</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>2038年問題</td><td>符号付き32ビットが2038-01-19 03:14:07 UTCで桁あふれ</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>図1:タイムスタンプと日付の相互変換の流れ――タイムスタンプか日付を入力し、UTCと各ゾーンの時刻を得る</figcaption></figure>
+<h2>ECサポートでよく使うタイムゾーン</h2><p>以下は越境ECサポートでよく扱うタイムゾーンとそのIANA名です。ツールはブラウザ内蔵のタイムゾーンデータベースでリアルタイムに変換し(夏時間を自動処理)、手動で時差を足し引きする必要はありません。顧客の都市をこれらのゾーンに対応づければ、相手の現地時刻が分かります。</p>
+<table><tr><th>地域</th><th>IANAタイムゾーン</th><th>代表的なオフセット</th></tr><tr><td>北京 / 中国</td><td>Asia/Shanghai</td><td>UTC+8(通年)</td></tr><tr><td>協定世界時</td><td>UTC</td><td>UTC+0</td></tr><tr><td>米国東部</td><td>America/New_York</td><td>UTC-5 / -4(夏時間)</td></tr><tr><td>米国西部</td><td>America/Los_Angeles</td><td>UTC-8 / -7(夏時間)</td></tr><tr><td>ロンドン</td><td>Europe/London</td><td>UTC+0 / +1(夏時間)</td></tr><tr><td>東京</td><td>Asia/Tokyo</td><td>UTC+9(通年)</td></tr><tr><td>ジャカルタ</td><td>Asia/Jakarta</td><td>UTC+7(通年)</td></tr><tr><td>シドニー</td><td>Australia/Sydney</td><td>UTC+10 / +11(夏時間)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>図2:主要ゾーンのUTCオフセット(実際の変換はブラウザが夏時間込みで処理)</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="ECサポートでよく使うタイムゾーンとUTCオフセットの図" width="1120" height="560" loading="lazy"></picture><figcaption>越境ECサポートでよく使うタイムゾーンとUTCオフセット一覧</figcaption></figure>
+<section id="data2026">
+<h2>2026年の世界のタイムゾーンと夏時間の概観(推計)</h2><p>越境サポートでは全体像の把握が役立ちます。2026年時点で、世界の約3分の1の国が夏時間を実施し(2023年で約34%)、欧州と北米に集中しています。アジアや赤道付近のアフリカの多くは実施せず、中国との時差は通年固定です。世界のUTCオフセットはUTC-12からUTC+14にわたります。</p>
+<table><tr><th>概念</th><th>2026</th></tr><tr><td>夏時間を実施する国の割合(2023)</td><td>≈ 34%</td></tr><tr><td>世界のUTCオフセット範囲</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>Unix紀元</td><td>1970-01-01 UTC</td></tr><tr><td>2038年の桁あふれ時刻</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">推計・非一次情報:夏時間の割合はWikipedia(2023年で約34%)、タイムゾーンとオフセットはIANAタイムゾーンデータベースに基づきます。各地の夏時間の開始・終了日は毎年微調整されるため、実際の変換はツール(ブラウザ内蔵のIANAデータ)の結果を優先してください。</p></section>
+<div class="cta"><h2>易歪歪をダウンロード</h2><p>ECサポートの定型文・話術管理をもっと効率化？公式ダウンロードページから易歪歪デスクトップ版を入手:</p><a class="dl" href="https://yiwaiwaiservice.com/download/">易歪歪をダウンロード(公式)</a></div>
+<h2>よくある質問</h2><details><summary>Unixタイムスタンプを日付に変換するには？</summary><p>上の入力欄にタイムスタンプを貼り付けて変換します。10桁は秒、13桁はミリ秒で、UTCと北京・米東部などの対応時刻を表示します。</p></details><details><summary>タイムスタンプはどのタイムゾーン？</summary><p>Unixタイムスタンプにタイムゾーンはありません。1970-01-01 00:00:00 UTCからの秒数で、世界共通の瞬間です。何時何分に直すときにだけゾーンを指定します。</p></details><details><summary>顧客の時刻と管理画面が違うのはなぜ？</summary><p>多くは時差です。管理画面はUTCや北京時間、顧客は現地時間で話します。同じ瞬間を両方のゾーンに変換すれば一致します。</p></details><details><summary>夏時間は変換に影響する？</summary><p>します。米東部・ロンドン・シドニーは夏時間があり、北京との時差は季節で変わります。ツールはブラウザ内蔵のIANAデータで自動処理します。</p></details><details><summary>2038年問題とは？</summary><p>符号付き32ビットのタイムスタンプは2038-01-19 03:14:07 UTCが上限で、その後桁あふれします。最近の系は64ビットなので通常は心配不要ですが、古い系のログは注意。</p></details><details><summary>ツールはデータをアップロードする？</summary><p>しません。タイムスタンプとタイムゾーンの変換はすべてブラウザ内で完結し、アップロードも保存もしません。</p></details><details><summary>ミリ秒のタイムスタンプも変換できる？</summary><p>できます。13桁はミリ秒、10桁は秒として解釈します。ISO日付(例:2026-06-30T12:00:00Z)を貼って逆引きもできます。</p></details>
+<h2>よくある場面の早見</h2><ul class="scenes"><li>海外顧客に注文はいつ発送かと聞かれた:管理画面はUTCタイムスタンプ。顧客のゾーンに変換して現地時刻で伝え、誤解を防ぐ。</li><li>時差をまたぐ配信やセールの設定:北京時間を米東部・ロンドンに変換し、現地の時間帯が適切か確認する。</li><li>ログ調査:注文APIが10桁のタイムスタンプを返す。貼り付ければ人間可読の時刻が出て、どの瞬間の操作か特定できる。</li><li>顧客がもう翌日だと言う:大きな時差や日付変更線をまたぐ場合、双方の現地日付を確認し、誤った日付の案内を避ける。</li></ul>
+<div class="related"><h2>関連</h2><ul>
+<li><a href="/ja/about-editor/">著者について:周明</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>タイムスタンプとタイムゾーンの知識はWikipedia(Unix時間、夏時間)とIANAタイムゾーンデータベースをもとに整理。変換は標準のブラウザAPI(Date / Intl)で行う参考情報です。<br>著者:周明 · 内容編集者 · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "現在のUnixタイムスタンプ", "local_tz": "あなたのタイムゾーン", "region": "地域", "tz_name": "IANAタイムゾーン", "local_time": "現地時刻", "detecting": "タイムゾーンを読み取り中…", "unix_ts": "Unixタイムスタンプ(秒)", "bad_input": "認識できません。Unixタイムスタンプ(10/13桁)または日付を入力してください", "convert": "変換", "ph": "Unixタイムスタンプか日付を入力 例: 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
