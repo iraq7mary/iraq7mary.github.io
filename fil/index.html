@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="fil"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unix Timestamp & Time Zone Converter - panahon hanggang ngayon, multi-zone para sa suporta</title>
+<meta name="description" content="Isang purong tool sa web: i-convert ang mga timestamp ng Unix sa mga petsa at pabalik, at basahin ang kasalukuyang oras sa buong Beijing, UTC, US Eastern at Pacific, London at Tokyo. Ginawa para sa e-commerce na serbisyo sa customer na nangangasiwa ng mga cross-timezone na order at mga customer sa ibang bansa. Gumagana nang lokal, walang na-upload.">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unix Timestamp &amp; Time Zone Converter - panahon hanggang ngayon, multi-zone para sa suporta">
+<meta property="og:description" content="Isang purong tool sa web: i-convert ang mga timestamp ng Unix sa mga petsa at pabalik, at basahin ang kasalukuyang oras sa buong Beijing, UTC, US Eastern at Pacific, London at Tokyo. Ginawa para sa e-commerce na serbisyo sa customer na nangangasiwa ng mga cross-timezone na order at mga customer sa ibang bansa. Gumagana nang lokal, walang na-upload.">
+<meta property="og:locale" content="fil_PH"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Unix Timestamp at Multi-Time-Zone Converter",
+   "url": "https://iraq7mary.github.io/fil/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "fil",
+   "description": "Isang purong tool sa web: i-convert ang mga timestamp ng Unix sa mga petsa at pabalik, at basahin ang kasalukuyang oras sa buong Beijing, UTC, US Eastern at Pacific, London at Tokyo. Ginawa para sa e-commerce na serbisyo sa customer na nangangasiwa ng mga cross-timezone na order at mga customer sa ibang bansa. Gumagana nang lokal, walang na-upload.",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/fil/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "fil",
+   "url": "https://iraq7mary.github.io/fil/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Paano ko iko-convert ang isang Unix timestamp sa isang petsa?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "I-paste ang timestamp sa kahon sa itaas at i-convert. 10 digit ay segundo, 13 ay millisecond; ipinapakita ng tool ang pagtutugma ng oras sa UTC at mga zone tulad ng Beijing at US Eastern."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Nasa aling time zone ang isang timestamp?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ang isang Unix timestamp ay walang time zone - ito ang bilang ng mga segundo mula noong 1970-01-01 00:00:00 UTC, isang pandaigdigang instant; pumili ka lang ng zone para ipakita ito bilang wall-clock time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Bakit naiiba ang oras ng customer sa aking backend?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kadalasan ay isang time-zone gap. Ang mga backend ay madalas na gumagamit ng oras ng UTC o Beijing, habang sinasabi ng customer ang kanilang lokal na oras. I-convert ang parehong instant sa parehong mga zone upang i-align."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Nakakaapekto ba ang daylight saving sa conversion?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oo. Ang US Eastern, London at Sydney ay nagmamasid sa DST, kaya ang kanilang agwat mula sa Beijing ay nagbabago ayon sa panahon. Ginagamit ng tool ang browser na naka-built-in na data ng IANA upang awtomatiko itong pangasiwaan."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Ano ang problema ng 2038?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ang isang nilagdaang 32-bit timestamp ay lumalabas sa 2038-01-19 03:14:07 UTC at pagkatapos ay umaapaw. Ang mga modernong system ay gumagamit ng 64-bit, kaya ang pang-araw-araw na suporta ay hindi kailangang mag-alala, ngunit panoorin ang mas lumang mga log ng system."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Ina-upload ba ng tool ang aking data?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hindi. Lahat ng timestamp at time-zone na conversion ay tumatakbo nang lokal sa iyong browser - walang na-upload o nakaimbak."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Maaari ba itong mag-convert ng mga millisecond na timestamp?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oo. 13 digit ang nag-parse bilang millisecond, 10 bilang segundo; maaari ka ring mag-paste ng petsa ng ISO (gaya ng 2026-06-30T12:00:00Z) upang maibalik ang timestamp."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <strong>Filipino</strong> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Unix Timestamp at Multi-Time-Zone Converter</h1>
+<p class="byline"><a href="/fil/about-editor/" rel="author">周明</a> · Na-update noong 2026-06</p>
+<p>Ang suporta sa e-commerce ay madalas na nakikitungo sa mga timestamp ng Unix sa mga log ng order at mga customer na kumalat sa mga time zone. Isa itong purong web tool: i-convert ang mga timestamp at petsa ng Unix sa parehong paraan, at makita ang kasalukuyang oras sa mga karaniwang zone nang real time, para maihanay mo ang mga cross-timezone na pag-uusap at mga oras ng pag-order nang mabilis. Lahat ay tumatakbo nang lokal sa iyong browser - walang na-upload o naka-install.</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="Yi Waiwai timestamp at time zone converter banner" width="1120" height="360" fetchpriority="high"></picture><figcaption>I-convert ang mga timestamp at time zone ng Unix online para sa cross-border na suporta sa e-commerce</figcaption></figure>
+<h2>Mag-convert ng timestamp o petsa</h2><p>Mag-paste ng Unix timestamp (10 digit para sa mga segundo, 13 para sa millisecond) o isang ISO na petsa sa kahon sa ibaba at i-convert. Ipinapakita ng talahanayan sa itaas ang kasalukuyang oras sa mga time zone na pinakakaraniwan sa cross-border na suporta sa e-commerce.</p>
+<div class="rk"><div id="clk-out">Binabasa ang mga time zone...</div><div class="conv"><input id="ts-in" placeholder="Maglagay ng timestamp o petsa ng Unix, hal. 1000000000" autocomplete="off"><button id="conv-go">Magbalik-loob</button></div><div id="conv-out"></div></div>
+<h2>Ano ang Unix timestamp at kung paano ito nagko-convert</h2><p>Ang Unix timestamp ay ang bilang ng mga di-leap na segundo mula noong panahon ng UTC, 1 Enero 1970 00:00:00, na binibilang ang 86400 na segundo bawat araw. Halimbawa, ang 1000000000 ay 2001-09-09 01:46:40 UTC. Tandaan na ang isang nilagdaang 32-bit timestamp ay umaapaw sa 2038-01-19 03:14:07 UTC (ang 2038 na problema).</p>
+<table><tr><th>Konsepto</th><th>Detalye</th></tr><tr><td>Epoch</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>Nagbibilang</td><td>Non-leap seconds simula noong panahon, 86400 bawat araw</td></tr><tr><td>Halimbawa</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>2038 problema</td><td>Ang nilagdaang 32-bit ay umaapaw sa 2038-01-19 03:14:07 UTC</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>Fig 1: daloy ng conversion ng timestamp-date - maglagay ng timestamp o petsa, kumuha ng mga oras ng UTC at per-zone.</figcaption></figure>
+<h2>Mga time zone na karaniwan sa suporta sa e-commerce</h2><p>Nasa ibaba ang mga time zone sa cross-border support deal sa karamihan, kasama ang kanilang mga pangalan sa IANA. Ginagamit ng tool ang browser built-in na database ng time-zone upang mag-convert sa real time (awtomatikong pinangangasiwaan ang daylight saving), kaya hindi ka kailanman magdagdag o magbawas ng mga offset sa pamamagitan ng kamay. Imapa ang lungsod ng customer sa isa sa mga zone na ito upang malaman ang kanilang lokal na oras.</p>
+<table><tr><th>Rehiyon</th><th>IANA time zone</th><th>Karaniwang offset</th></tr><tr><td>Beijing / China</td><td>Asia/Shanghai</td><td>UTC+8 (buong taon)</td></tr><tr><td>Coordinated Universal Time</td><td>UTC</td><td>UTC+0</td></tr><tr><td>US Eastern</td><td>America/New_York</td><td>UTC-5 / -4 (DST)</td></tr><tr><td>US Pacific</td><td>America/Los_Angeles</td><td>UTC-8 / -7 (DST)</td></tr><tr><td>London</td><td>Europe/London</td><td>UTC+0 / +1 (DST)</td></tr><tr><td>Tokyo</td><td>Asia/Tokyo</td><td>UTC+9 (buong taon)</td></tr><tr><td>Jakarta</td><td>Asia/Jakarta</td><td>UTC+7 (buong taon)</td></tr><tr><td>Sydney</td><td>Australia/Sydney</td><td>UTC+10 / +11 (DST)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>Fig 2: Mga offset ng UTC ng mga karaniwang zone (ang aktwal na conversion ay pinangangasiwaan ng browser na may DST).</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="Mga karaniwang time zone ng suporta sa e-commerce at chart ng mga offset ng UTC" width="1120" height="560" loading="lazy"></picture><figcaption>Mga time zone na karaniwan sa cross-border na suporta, na may mga UTC offset sa isang sulyap</figcaption></figure>
+<section id="data2026">
+<h2>2026 global time zone at pangkalahatang-ideya ng DST (tantiya)</h2><p>Para sa cross-border support, nakakatulong na malaman ang landscape: simula noong 2026, humigit-kumulang sa ikatlong bahagi ng mga bansa sa mundo ang nagmamasid sa daylight saving time (mga 34% noong 2023), na puro sa Europe at North America, habang ang karamihan sa Asia at equatorial Africa ay hindi - kaya ang kanilang offset mula sa China ay nananatiling maayos sa buong taon. Ang mga pandaigdigang UTC offset ay sumasaklaw sa UTC-12 to UTC+14.</p>
+<table><tr><th>Konsepto</th><th>2026</th></tr><tr><td>Mga bansang nagmamasid sa DST (2023)</td><td>≈ 34%</td></tr><tr><td>Global UTC offset range</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>Panahon ng Unix</td><td>1970-01-01 UTC</td></tr><tr><td>2038 overflow moment</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">Tantyahin, hindi unang-kamay: ang bahagi ng DST ay mula sa Wikipedia (tungkol sa 34% noong 2023); ang mga time zone at offset ay sumusunod sa IANA time-zone database; Bahagyang nagbabago ang mga petsa ng pagsisimula at pagtatapos ng DST bawat taon, kaya magtiwala sa tool (data ng browser IANA) para sa aktwal na conversion.</p></section>
+<div class="cta"><h2>I-download ang Yi Waiwai</h2><p>Kailangan ng mas mabilis na mabilis na tugon at pamamahala ng script para sa suporta sa e-commerce? Kunin ang Yi Waiwai desktop app mula sa opisyal na pahina ng pag-download:</p><a class="dl" href="https://yiwaiwaiservice.com/download/">I-download ang Yi Waiwai (opisyal)</a></div>
+<h2>Mga madalas itanong</h2><details><summary>Paano ko iko-convert ang isang Unix timestamp sa isang petsa?</summary><p>I-paste ang timestamp sa kahon sa itaas at i-convert. 10 digit ay segundo, 13 ay millisecond; ipinapakita ng tool ang pagtutugma ng oras sa UTC at mga zone tulad ng Beijing at US Eastern.</p></details><details><summary>Nasa aling time zone ang isang timestamp?</summary><p>Ang isang Unix timestamp ay walang time zone - ito ang bilang ng mga segundo mula noong 1970-01-01 00:00:00 UTC, isang pandaigdigang instant; pumili ka lang ng zone para ipakita ito bilang wall-clock time.</p></details><details><summary>Bakit naiiba ang oras ng customer sa aking backend?</summary><p>Kadalasan ay isang time-zone gap. Ang mga backend ay madalas na gumagamit ng oras ng UTC o Beijing, habang sinasabi ng customer ang kanilang lokal na oras. I-convert ang parehong instant sa parehong mga zone upang i-align.</p></details><details><summary>Nakakaapekto ba ang daylight saving sa conversion?</summary><p>Oo. Ang US Eastern, London at Sydney ay nagmamasid sa DST, kaya ang kanilang agwat mula sa Beijing ay nagbabago ayon sa panahon. Ginagamit ng tool ang browser na naka-built-in na data ng IANA upang awtomatiko itong pangasiwaan.</p></details><details><summary>Ano ang problema ng 2038?</summary><p>Ang isang nilagdaang 32-bit timestamp ay lumalabas sa 2038-01-19 03:14:07 UTC at pagkatapos ay umaapaw. Ang mga modernong system ay gumagamit ng 64-bit, kaya ang pang-araw-araw na suporta ay hindi kailangang mag-alala, ngunit panoorin ang mas lumang mga log ng system.</p></details><details><summary>Ina-upload ba ng tool ang aking data?</summary><p>Hindi. Lahat ng timestamp at time-zone na conversion ay tumatakbo nang lokal sa iyong browser - walang na-upload o nakaimbak.</p></details><details><summary>Maaari ba itong mag-convert ng mga millisecond na timestamp?</summary><p>Oo. 13 digit ang nag-parse bilang millisecond, 10 bilang segundo; maaari ka ring mag-paste ng petsa ng ISO (gaya ng 2026-06-30T12:00:00Z) upang maibalik ang timestamp.</p></details>
+<h2>Mabilis na real-world na mga pagsusuri</h2><ul class="scenes"><li>Nagtatanong ang isang customer sa ibang bansa kung kailan naipadala ang kanilang order: nag-iimbak ang backend ng timestamp ng UTC; i-convert ito sa customer zone at sabihin sa kanila ang kanilang lokal na oras para maiwasan ang pagkalito.</li><li>Pag-iskedyul ng cross-timezone na livestream o pagbebenta: i-convert ang oras ng Beijing sa US Eastern at London para kumpirmahin ang lokal na slot na gumagana.</li><li>Pag-troubleshoot ng log: nagbabalik ang isang order API ng 10-digit na timestamp; i-paste ito upang mabasa ang oras ng tao at matukoy ang eksaktong sandali.</li><li>Ang sabi ng isang customer ay sa susunod na araw na: sa malalaking offset o sa linya ng petsa, kumpirmahin ang bawat panig ng lokal na petsa para hindi mabanggit ang maling araw.</li></ul>
+<div class="related"><h2>Kaugnay</h2><ul>
+<li><a href="/fil/about-editor/">Tungkol sa may-akda: Zhou Ming</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>Timestamp at time-zone facts na pinagsama-sama mula sa Wikipedia (Unix time, daylight saving time) at ang IANA time-zone database; Ang conversion ay gumagamit ng mga karaniwang browser API (Date / Intl) at ito ay para sa sanggunian lamang.<br>Ni 周明 · content editor · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "Kasalukuyang Unix timestamp", "local_tz": "Ang iyong time zone", "region": "Rehiyon", "tz_name": "IANA time zone", "local_time": "Lokal na oras", "detecting": "Binabasa ang mga time zone...", "unix_ts": "(mga) timestamp ng Unix", "bad_input": "Hindi ma-parse - maglagay ng Unix timestamp (10/13 digit) o petsa", "convert": "Magbalik-loob", "ph": "Maglagay ng timestamp o petsa ng Unix, hal. 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
