@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="lo"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unix Timestamp & Time Zone Converter - ໄລຍະເວລາເຖິງວັນທີ, ຫຼາຍເຂດສໍາລັບການສະຫນັບສະຫນູນ</title>
+<meta name="description" content="ເຄື່ອງມືເວັບໄຊຕ໌ທີ່ບໍລິສຸດ: ປ່ຽນເວລາ Unix ເປັນວັນທີແລະກັບຄືນ, ແລະອ່ານເວລາປະຈຸບັນໃນທົ່ວປັກກິ່ງ, UTC, ສະຫະລັດຕາເວັນອອກແລະປາຊີຟິກ, ລອນດອນແລະໂຕກຽວ. ສ້າງຂຶ້ນເພື່ອບໍລິການລູກຄ້າທາງອີຄອມເມີຊເພື່ອຈັດການກັບການສັ່ງຂ້າມເຂດເວລາ ແລະລູກຄ້າຕ່າງປະເທດ. ແລ່ນຢູ່ໃນທ້ອງຖິ່ນ, ບໍ່ມີຫຍັງອັບໂຫລດ.">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unix Timestamp &amp; Time Zone Converter - ໄລຍະເວລາເຖິງວັນທີ, ຫຼາຍເຂດສໍາລັບການສະຫນັບສະຫນູນ">
+<meta property="og:description" content="ເຄື່ອງມືເວັບໄຊຕ໌ທີ່ບໍລິສຸດ: ປ່ຽນເວລາ Unix ເປັນວັນທີແລະກັບຄືນ, ແລະອ່ານເວລາປະຈຸບັນໃນທົ່ວປັກກິ່ງ, UTC, ສະຫະລັດຕາເວັນອອກແລະປາຊີຟິກ, ລອນດອນແລະໂຕກຽວ. ສ້າງຂຶ້ນເພື່ອບໍລິການລູກຄ້າທາງອີຄອມເມີຊເພື່ອຈັດການກັບການສັ່ງຂ້າມເຂດເວລາ ແລະລູກຄ້າຕ່າງປະເທດ. ແລ່ນຢູ່ໃນທ້ອງຖິ່ນ, ບໍ່ມີຫຍັງອັບໂຫລດ.">
+<meta property="og:locale" content="lo_LA"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Unix Timestamp ແລະ Multi-Time-Zone Converter",
+   "url": "https://iraq7mary.github.io/lo/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "lo",
+   "description": "ເຄື່ອງມືເວັບໄຊຕ໌ທີ່ບໍລິສຸດ: ປ່ຽນເວລາ Unix ເປັນວັນທີແລະກັບຄືນ, ແລະອ່ານເວລາປະຈຸບັນໃນທົ່ວປັກກິ່ງ, UTC, ສະຫະລັດຕາເວັນອອກແລະປາຊີຟິກ, ລອນດອນແລະໂຕກຽວ. ສ້າງຂຶ້ນເພື່ອບໍລິການລູກຄ້າທາງອີຄອມເມີຊເພື່ອຈັດການກັບການສັ່ງຂ້າມເຂດເວລາ ແລະລູກຄ້າຕ່າງປະເທດ. ແລ່ນຢູ່ໃນທ້ອງຖິ່ນ, ບໍ່ມີຫຍັງອັບໂຫລດ.",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/lo/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "lo",
+   "url": "https://iraq7mary.github.io/lo/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "ຂ້ອຍຈະປ່ຽນເວລາ Unix ເປັນວັນທີແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ວາງສະແຕມເວລາລົງໃສ່ກ່ອງຂ້າງເທິງແລ້ວປ່ຽນ. 10 ຕົວເລກແມ່ນວິນາທີ, 13 ແມ່ນ milliseconds; ເຄື່ອງ​ມື​ສະ​ແດງ​ໃຫ້​ເຫັນ​ເວ​ລາ​ທີ່​ກົງ​ກັນ​ໃນ UTC ແລະ​ເຂດ​ເຊັ່ນ​: ປັກ​ກິ່ງ​ແລະ​ສະ​ຫະ​ລັດ​ຕາ​ເວັນ​ອອກ​."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ເຂດເວລາໃດເປັນຈຸດເວລາຢູ່ໃນ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A timestamp Unix ບໍ່ມີເຂດເວລາ - ມັນເປັນຈໍານວນວິນາທີນັບຕັ້ງແຕ່ 1970-01-01 00:00:00 UTC, ທັນທີທົ່ວໂລກ; ທ່ານ​ພຽງ​ແຕ່​ເລືອກ​ເອົາ​ເຂດ​ທີ່​ຈະ​ສະ​ແດງ​ມັນ​ເປັນ​ເວ​ລາ​ກໍາ​ແພງ​ຫີນ​."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ເປັນຫຍັງເວລາຂອງລູກຄ້າແຕກຕ່າງຈາກ backend ຂອງຂ້ອຍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ປົກກະຕິແລ້ວແມ່ນຊ່ອງຫວ່າງເຂດເວລາ. Backends ມັກຈະໃຊ້ເວລາ UTC ຫຼືປັກກິ່ງ, ໃນຂະນະທີ່ລູກຄ້າລະບຸເວລາທ້ອງຖິ່ນຂອງພວກເຂົາ. ປ່ຽນທັນທີດຽວກັນເປັນທັງສອງເຂດເພື່ອຈັດຮຽງ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ການປະຢັດແສງມີຜົນຕໍ່ການປ່ຽນແປງບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ແມ່ນແລ້ວ. ສະຫະລັດຕາເວັນອອກ, ລອນດອນແລະຊິດນີສັງເກດເຫັນ DST, ດັ່ງນັ້ນຊ່ອງຫວ່າງຂອງພວກເຂົາຈາກປັກກິ່ງປ່ຽນໄປຕາມລະດູການ. ເຄື່ອງມືດັ່ງກ່າວໃຊ້ຂໍ້ມູນ IANA ທີ່ສ້າງຂຶ້ນໃນຕົວທ່ອງເວັບເພື່ອຈັດການກັບມັນໂດຍອັດຕະໂນມັດ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ບັນຫາ 2038 ແມ່ນຫຍັງ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ສະແຕມເວລາ 32-bit ທີ່ລົງນາມແມ່ນສູງສຸດທີ່ 2038-01-19 03:14:07 UTC ແລະຫຼັງຈາກນັ້ນຈະລົ້ນ. ລະບົບທີ່ທັນສະໄຫມໃຊ້ 64-bit, ດັ່ງນັ້ນການສະຫນັບສະຫນູນປະຈໍາວັນບໍ່ຈໍາເປັນຕ້ອງກັງວົນ, ແຕ່ເບິ່ງບັນທຶກລະບົບເກົ່າ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ເຄື່ອງມືອັບໂຫລດຂໍ້ມູນຂອງຂ້ອຍບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ບໍ່. ການປ່ຽນເວລາ ແລະເຂດເວລາທັງໝົດດຳເນີນຢູ່ໃນບຼາວເຊີຂອງທ່ານ - ບໍ່ມີຫຍັງຖືກອັບໂຫລດ ຫຼືເກັບຮັກສາໄວ້."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ມັນສາມາດແປງເວລາ millisecond ໄດ້ບໍ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ແມ່ນແລ້ວ. 13 ຕົວເລກ parse ເປັນ milliseconds, 10 ເປັນວິນາທີ; ທ່ານຍັງສາມາດວາງວັນທີ ISO (ເຊັ່ນ 2026-06-30T12:00:00Z) ເພື່ອເອົາເວລາກັບຄືນ."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <strong>ພາສາລາວ</strong> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Unix Timestamp ແລະ Multi-Time-Zone Converter</h1>
+<p class="byline"><a href="/lo/about-editor/" rel="author">周明</a> · ອັບເດດ 2026-06</p>
+<p>ການສະຫນັບສະຫນູນອີຄອມເມີຊມັກຈະຈັດການກັບເວລາ Unix ໃນບັນທຶກຄໍາສັ່ງແລະລູກຄ້າແຜ່ຂະຫຍາຍໃນທົ່ວເຂດເວລາ. ນີ້ແມ່ນເຄື່ອງມືເວັບໄຊຕ໌ທີ່ບໍລິສຸດ: ປ່ຽນເວລາ Unix ແລະວັນທີທັງສອງວິທີ, ແລະເບິ່ງເວລາປະຈຸບັນໃນເຂດທົ່ວໄປໃນເວລາທີ່ແທ້ຈິງ, ດັ່ງນັ້ນທ່ານສາມາດຈັດລໍາດັບການສົນທະນາຂ້າມເວລາແລະສັ່ງເວລາຢ່າງໄວວາ. ທຸກສິ່ງທຸກຢ່າງເຮັດວຽກຢູ່ໃນຕົວທ່ອງເວັບຂອງທ່ານ - ບໍ່ມີຫຍັງຖືກອັບໂຫລດຫຼືຕິດຕັ້ງ.</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="ສະແຕມເວລາ Yi Waiwai ແລະປ້າຍໂຄສະນາຕົວປ່ຽນເຂດເວລາ" width="1120" height="360" fetchpriority="high"></picture><figcaption>ແປງເວລາ Unix ແລະເຂດເວລາອອນໄລນ໌ສໍາລັບການສະຫນັບສະຫນູນອີຄອມເມີຊຂ້າມຊາຍແດນ</figcaption></figure>
+<h2>ປ່ຽນເວລາ ຫຼືວັນທີ</h2><p>ວາງເວລາ Unix (10 ຕົວເລກສໍາລັບວິນາທີ, 13 ສໍາລັບ milliseconds) ຫຼືວັນທີ ISO ເຂົ້າໄປໃນປ່ອງຂ້າງລຸ່ມນີ້ແລະແປງ. ຕາຕະລາງຂ້າງເທິງສະແດງໃຫ້ເຫັນເວລາໃນປະຈຸບັນໃນທົ່ວເຂດເວລາທົ່ວໄປທີ່ສຸດໃນການສະຫນັບສະຫນູນ e-commerce ຂ້າມຊາຍແດນ.</p>
+<div class="rk"><div id="clk-out">ກຳລັງອ່ານເຂດເວລາ...</div><div class="conv"><input id="ts-in" placeholder="ລະບຸເວລາ ຫຼືວັນທີຂອງ Unix, e.g. 1000000000" autocomplete="off"><button id="conv-go">ແປງ</button></div><div id="conv-out"></div></div>
+<h2>ເວລາ Unix ແມ່ນຫຍັງ ແລະມັນປ່ຽນແນວໃດ</h2><p>A timestamp Unix ແມ່ນຈໍານວນວິນາທີທີ່ບໍ່ກ້າວກະໂດດຕັ້ງແຕ່ເວລາ UTC, 1 ມັງກອນ 1970 00:00:00, ນັບ 86400 ວິນາທີຕໍ່ມື້. ຕົວຢ່າງ, 1000000000 ແມ່ນ 2001-09-09 01:46:40 UTC. ຈື່ໄວ້ວ່າເວລາ 32-bit ທີ່ເຊັນແລ້ວຈະລົ້ນໃນ 2038-01-19 03:14:07 UTC (ບັນຫາ 2038).</p>
+<table><tr><th>ແນວຄວາມຄິດ</th><th>ລາຍລະອຽດ</th></tr><tr><td>ຍຸກ</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>ການນັບ</td><td>ວິນາທີທີ່ບໍ່ກ້າວກະໂດດຕັ້ງແຕ່ຍຸກ, 86400 ຕໍ່ມື້</td></tr><tr><td>ຕົວຢ່າງ</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>ບັນຫາ 2038</td><td>ເຊັນ 32-bit overflows ຢູ່ 2038-01-19 03:14:07 UTC</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>Fig 1: timestamp-date conversion flow - ໃສ່ timestamp or date, get UTC and per-zone times.</figcaption></figure>
+<h2>ເຂດເວລາທົ່ວໄປໃນການສະຫນັບສະຫນູນ e-commerce</h2><p>ຂ້າງລຸ່ມນີ້ແມ່ນເຂດເວລາທີ່ມີຂໍ້ສະ ເໜີ ໃຫ້ການສະ ໜັບ ສະ ໜູນ ຂ້າມຊາຍແດນສ່ວນໃຫຍ່, ດ້ວຍຊື່ IANA ຂອງພວກເຂົາ. ເຄື່ອງມືດັ່ງກ່າວໃຊ້ຖານຂໍ້ມູນເຂດເວລາໃນຕົວຂອງຕົວທ່ອງເວັບເພື່ອແປງໃນເວລາຈິງ (ຈັດການການປະຫຍັດເວລາກາງເວັນໂດຍອັດຕະໂນມັດ), ດັ່ງນັ້ນທ່ານບໍ່ເຄີຍເພີ່ມຫຼືລົບການຊົດເຊີຍດ້ວຍມື. ແຜນທີ່ເມືອງລູກຄ້າໄປຫາຫນຶ່ງໃນເຂດເຫຼົ່ານີ້ເພື່ອຮູ້ເວລາທ້ອງຖິ່ນຂອງພວກເຂົາ.</p>
+<table><tr><th>ພາກພື້ນ</th><th>ເຂດເວລາ IANA</th><th>ຊົດເຊີຍແບບປົກກະຕິ</th></tr><tr><td>ປັກກິ່ງ/ຈີນ</td><td>Asia/Shanghai</td><td>UTC+8 (ທັງ​ປີ​)</td></tr><tr><td>ເວລາສາກົນທີ່ປະສານງານ</td><td>UTC</td><td>UTC+0</td></tr><tr><td>ສະຫະລັດຕາເວັນອອກ</td><td>America/New_York</td><td>UTC-5 / -4 (DST)</td></tr><tr><td>ປາຊີຟິກຂອງສະຫະລັດ</td><td>America/Los_Angeles</td><td>UTC-8 / -7 (DST)</td></tr><tr><td>ລອນດອນ</td><td>Europe/London</td><td>UTC+0 / +1 (DST)</td></tr><tr><td>ໂຕກຽວ</td><td>Asia/Tokyo</td><td>UTC+9 (ທັງ​ປີ​)</td></tr><tr><td>ຈາກາຕາ</td><td>Asia/Jakarta</td><td>UTC+7 (ທັງ​ປີ​)</td></tr><tr><td>ຊິດນີ</td><td>Australia/Sydney</td><td>UTC+10 / +11 (DST)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>Fig 2: ການຊົດເຊີຍ UTC ຂອງເຂດທົ່ວໄປ (ການແປງຕົວຈິງແມ່ນຈັດການໂດຍຕົວທ່ອງເວັບກັບ DST).</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="ເຂດເວລາສະຫນັບສະຫນູນ e-commerce ທົ່ວໄປແລະຕາຕະລາງການຊົດເຊີຍ UTC" width="1120" height="560" loading="lazy"></picture><figcaption>ເຂດເວລາທົ່ວໄປໃນການຊ່ວຍເຫຼືອຂ້າມຊາຍແດນ, ດ້ວຍການຊົດເຊີຍ UTC ໃນທັນທີ</figcaption></figure>
+<section id="data2026">
+<h2>ເຂດເວລາທົ່ວໂລກ 2026 ແລະພາບລວມ DST (ການຄາດຄະເນ)</h2><p>ສໍາລັບການສະຫນັບສະຫນູນຂ້າມຊາຍແດນມັນຊ່ວຍໃຫ້ຮູ້ພູມສັນຖານ: ມາຮອດປີ 2026, ປະມານຫນຶ່ງສ່ວນສາມຂອງບັນດາປະເທດໃນໂລກສັງເກດເຫັນເວລາປະຫຍັດເວລາກາງເວັນ (ປະມານ 34% ໃນປີ 2023), ສຸມໃສ່ໃນເອີຣົບແລະອາເມລິກາເຫນືອ, ໃນຂະນະທີ່ອາຊີແລະເຂດເສັ້ນສູນສູດຂອງອາຟຣິກາສ່ວນໃຫຍ່ບໍ່ໄດ້ - ດັ່ງນັ້ນການຊົດເຊີຍຂອງພວກເຂົາຈາກຈີນຄົງຄົງຕະຫຼອດປີ. ການຊົດເຊີຍ UTC ທົ່ວໂລກກວມເອົາ UTC-12 to UTC+14.</p>
+<table><tr><th>ແນວຄວາມຄິດ</th><th>2026</th></tr><tr><td>ປະເທດທີ່ສັງເກດການ DST (2023)</td><td>≈ 34%</td></tr><tr><td>ຂອບເຂດການຊົດເຊີຍ UTC ທົ່ວໂລກ</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>ຍຸກ Unix</td><td>1970-01-01 UTC</td></tr><tr><td>2038 ຊ່ວງເວລາລົ້ນ</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">ການຄາດຄະເນ, ບໍ່ແມ່ນມືທໍາອິດ: ຮຸ້ນ DST ແມ່ນມາຈາກ Wikipedia (ກ່ຽວກັບ 34% ໃນປີ 2023); ເຂດເວລາແລະການຊົດເຊີຍປະຕິບັດຕາມຖານຂໍ້ມູນເຂດເວລາ IANA; ວັນທີເລີ່ມຕົ້ນ ແລະວັນທີສິ້ນສຸດຂອງ DST ມີການປ່ຽນແປງເລັກນ້ອຍໃນແຕ່ລະປີ, ດັ່ງນັ້ນເຊື່ອໃນເຄື່ອງມື (ຂໍ້ມູນຂອງຕົວທ່ອງເວັບ IANA) ສໍາລັບການປ່ຽນຕົວຈິງ.</p></section>
+<div class="cta"><h2>ດາວໂຫລດ Yi Waiwai</h2><p>ຕ້ອງການການຕອບຄືນໄວແລະການຈັດການສະຄິບທີ່ໄວຂຶ້ນສໍາລັບການສະຫນັບສະຫນູນອີຄອມເມີຊບໍ? ດາວໂຫລດແອັບຯ desktop Yi Waiwai ຈາກຫນ້າດາວໂຫລດຢ່າງເປັນທາງການ:</p><a class="dl" href="https://yiwaiwaiservice.com/download/">ດາວໂຫລດ Yi Waiwai (ເປັນທາງການ)</a></div>
+<h2>ຄຳຖາມທີ່ມັກຖາມເລື້ອຍໆ</h2><details><summary>ຂ້ອຍຈະປ່ຽນເວລາ Unix ເປັນວັນທີແນວໃດ?</summary><p>ວາງສະແຕມເວລາລົງໃສ່ກ່ອງຂ້າງເທິງແລ້ວປ່ຽນ. 10 ຕົວເລກແມ່ນວິນາທີ, 13 ແມ່ນ milliseconds; ເຄື່ອງ​ມື​ສະ​ແດງ​ໃຫ້​ເຫັນ​ເວ​ລາ​ທີ່​ກົງ​ກັນ​ໃນ UTC ແລະ​ເຂດ​ເຊັ່ນ​: ປັກ​ກິ່ງ​ແລະ​ສະ​ຫະ​ລັດ​ຕາ​ເວັນ​ອອກ​.</p></details><details><summary>ເຂດເວລາໃດເປັນຈຸດເວລາຢູ່ໃນ?</summary><p>A timestamp Unix ບໍ່ມີເຂດເວລາ - ມັນເປັນຈໍານວນວິນາທີນັບຕັ້ງແຕ່ 1970-01-01 00:00:00 UTC, ທັນທີທົ່ວໂລກ; ທ່ານ​ພຽງ​ແຕ່​ເລືອກ​ເອົາ​ເຂດ​ທີ່​ຈະ​ສະ​ແດງ​ມັນ​ເປັນ​ເວ​ລາ​ກໍາ​ແພງ​ຫີນ​.</p></details><details><summary>ເປັນຫຍັງເວລາຂອງລູກຄ້າແຕກຕ່າງຈາກ backend ຂອງຂ້ອຍ?</summary><p>ປົກກະຕິແລ້ວແມ່ນຊ່ອງຫວ່າງເຂດເວລາ. Backends ມັກຈະໃຊ້ເວລາ UTC ຫຼືປັກກິ່ງ, ໃນຂະນະທີ່ລູກຄ້າລະບຸເວລາທ້ອງຖິ່ນຂອງພວກເຂົາ. ປ່ຽນທັນທີດຽວກັນເປັນທັງສອງເຂດເພື່ອຈັດຮຽງ.</p></details><details><summary>ການປະຢັດແສງມີຜົນຕໍ່ການປ່ຽນແປງບໍ?</summary><p>ແມ່ນແລ້ວ. ສະຫະລັດຕາເວັນອອກ, ລອນດອນແລະຊິດນີສັງເກດເຫັນ DST, ດັ່ງນັ້ນຊ່ອງຫວ່າງຂອງພວກເຂົາຈາກປັກກິ່ງປ່ຽນໄປຕາມລະດູການ. ເຄື່ອງມືດັ່ງກ່າວໃຊ້ຂໍ້ມູນ IANA ທີ່ສ້າງຂຶ້ນໃນຕົວທ່ອງເວັບເພື່ອຈັດການກັບມັນໂດຍອັດຕະໂນມັດ.</p></details><details><summary>ບັນຫາ 2038 ແມ່ນຫຍັງ?</summary><p>ສະແຕມເວລາ 32-bit ທີ່ລົງນາມແມ່ນສູງສຸດທີ່ 2038-01-19 03:14:07 UTC ແລະຫຼັງຈາກນັ້ນຈະລົ້ນ. ລະບົບທີ່ທັນສະໄຫມໃຊ້ 64-bit, ດັ່ງນັ້ນການສະຫນັບສະຫນູນປະຈໍາວັນບໍ່ຈໍາເປັນຕ້ອງກັງວົນ, ແຕ່ເບິ່ງບັນທຶກລະບົບເກົ່າ.</p></details><details><summary>ເຄື່ອງມືອັບໂຫລດຂໍ້ມູນຂອງຂ້ອຍບໍ?</summary><p>ບໍ່. ການປ່ຽນເວລາ ແລະເຂດເວລາທັງໝົດດຳເນີນຢູ່ໃນບຼາວເຊີຂອງທ່ານ - ບໍ່ມີຫຍັງຖືກອັບໂຫລດ ຫຼືເກັບຮັກສາໄວ້.</p></details><details><summary>ມັນສາມາດແປງເວລາ millisecond ໄດ້ບໍ?</summary><p>ແມ່ນແລ້ວ. 13 ຕົວເລກ parse ເປັນ milliseconds, 10 ເປັນວິນາທີ; ທ່ານຍັງສາມາດວາງວັນທີ ISO (ເຊັ່ນ 2026-06-30T12:00:00Z) ເພື່ອເອົາເວລາກັບຄືນ.</p></details>
+<h2>ກວດ​ສອບ​ໂລກ​ຕົວ​ຈິງ​ໄວ​</h2><ul class="scenes"><li>ລູກຄ້າຢູ່ຕ່າງປະເທດຖາມເມື່ອຄໍາສັ່ງຂອງພວກເຂົາຖືກຈັດສົ່ງ: backend ເກັບຮັກສາເວລາ UTC; ປ່ຽນເປັນເຂດລູກຄ້າແລະບອກເວລາທ້ອງຖິ່ນຂອງພວກເຂົາເພື່ອຫຼີກເວັ້ນການສັບສົນ.</li><li>ກຳນົດເວລາການຖ່າຍທອດສົດ ຫຼື ການຂາຍຜ່ານເຂດເວລາ: ປ່ຽນເວລາປັກກິ່ງເປັນສະຫະລັດຕາເວັນອອກ ແລະລອນດອນເພື່ອຢືນຢັນການເຮັດວຽກຂອງສະລັອດຕິງທ້ອງຖິ່ນ.</li><li>ການແກ້ໄຂບັນຫາບັນທຶກ: API ຄໍາສັ່ງສົ່ງຄືນເວລາ 10 ຕົວເລກ; ວາງມັນໄວ້ເພື່ອອ່ານເວລາຂອງມະນຸດ ແລະຊີ້ບອກເວລາທີ່ແນ່ນອນ.</li><li>ລູກຄ້າບອກວ່າມັນແມ່ນມື້ຕໍ່ໄປແລ້ວ: ໃນທົ່ວການຊົດເຊີຍຂະຫນາດໃຫຍ່ຫຼືເສັ້ນວັນທີ, ຢືນຢັນແຕ່ລະມື້ໃນທ້ອງຖິ່ນເພື່ອບໍ່ໃຫ້ອ້າງເຖິງມື້ທີ່ຜິດພາດ.</li></ul>
+<div class="related"><h2>ທີ່ກ່ຽວຂ້ອງ</h2><ul>
+<li><a href="/lo/about-editor/">ກ່ຽວກັບຜູ້ຂຽນ: Zhou Ming</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>ເວລາແລະຂໍ້ເທັດຈິງເຂດເວລາລວບລວມຈາກ Wikipedia (ເວລາ Unix, ເວລາປະຫຍັດແສງກາງເວັນ) ແລະຖານຂໍ້ມູນເຂດເວລາ IANA; ການປ່ຽນໃຈເຫລື້ອມໃສໃຊ້ APIs ມາດຕະຖານຂອງຕົວທ່ອງເວັບ (Date / Intl) ແລະສໍາລັບການອ້າງອີງເທົ່ານັ້ນ.<br>ໂດຍ 周明 ·ບັນນາທິການເນື້ອຫາ · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "ສະແຕມເວລາ Unix ໃນປັດຈຸບັນ", "local_tz": "ເຂດເວລາຂອງທ່ານ", "region": "ພາກພື້ນ", "tz_name": "ເຂດເວລາ IANA", "local_time": "ເວລາທ້ອງຖິ່ນ", "detecting": "ກຳລັງອ່ານເຂດເວລາ...", "unix_ts": "ສະແຕມເວລາ Unix", "bad_input": "ບໍ່ສາມາດວິເຄາະໄດ້ - ລະບຸເວລາ Unix (10/13 ຕົວເລກ) ຫຼືວັນທີ", "convert": "ແປງ", "ph": "ລະບຸເວລາ ຫຼືວັນທີຂອງ Unix, e.g. 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
