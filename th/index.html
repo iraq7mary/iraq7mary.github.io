@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unix Timestamp & Time Zone Converter - ยุคจนถึงปัจจุบัน หลายโซนสำหรับการสนับสนุน</title>
+<meta name="description" content="เครื่องมือบนเว็บอย่างแท้จริง: แปลงการประทับเวลา Unix เป็นวันที่และย้อนกลับ และอ่านเวลาปัจจุบันในปักกิ่ง, UTC, สหรัฐอเมริกาฝั่งตะวันออกและแปซิฟิก, ลอนดอน และโตเกียว สร้างขึ้นเพื่อการบริการลูกค้าอีคอมเมิร์ซที่จัดการคำสั่งซื้อข้ามเขตเวลาและลูกค้าต่างประเทศ ทำงานในพื้นที่ ไม่มีการอัปโหลดใดๆ">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unix Timestamp &amp; Time Zone Converter - ยุคจนถึงปัจจุบัน หลายโซนสำหรับการสนับสนุน">
+<meta property="og:description" content="เครื่องมือบนเว็บอย่างแท้จริง: แปลงการประทับเวลา Unix เป็นวันที่และย้อนกลับ และอ่านเวลาปัจจุบันในปักกิ่ง, UTC, สหรัฐอเมริกาฝั่งตะวันออกและแปซิฟิก, ลอนดอน และโตเกียว สร้างขึ้นเพื่อการบริการลูกค้าอีคอมเมิร์ซที่จัดการคำสั่งซื้อข้ามเขตเวลาและลูกค้าต่างประเทศ ทำงานในพื้นที่ ไม่มีการอัปโหลดใดๆ">
+<meta property="og:locale" content="th_TH"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Unix Timestamp และตัวแปลงหลายโซนเวลา",
+   "url": "https://iraq7mary.github.io/th/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "th",
+   "description": "เครื่องมือบนเว็บอย่างแท้จริง: แปลงการประทับเวลา Unix เป็นวันที่และย้อนกลับ และอ่านเวลาปัจจุบันในปักกิ่ง, UTC, สหรัฐอเมริกาฝั่งตะวันออกและแปซิฟิก, ลอนดอน และโตเกียว สร้างขึ้นเพื่อการบริการลูกค้าอีคอมเมิร์ซที่จัดการคำสั่งซื้อข้ามเขตเวลาและลูกค้าต่างประเทศ ทำงานในพื้นที่ ไม่มีการอัปโหลดใดๆ",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/th/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "th",
+   "url": "https://iraq7mary.github.io/th/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "ฉันจะแปลงการประทับเวลา Unix เป็นวันที่ได้อย่างไร",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "วางการประทับเวลาลงในช่องด้านบนแล้วแปลง 10 หลักคือวินาที 13 หลักคือมิลลิวินาที เครื่องมือนี้แสดงเวลาที่ตรงกันใน UTC และโซนเช่นปักกิ่งและสหรัฐอเมริกาฝั่งตะวันออก"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "การประทับเวลาอยู่ในเขตเวลาใด",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "การประทับเวลา Unix ไม่มีเขตเวลา - เป็นจำนวนวินาทีตั้งแต่ 1970-01-01 00:00:00 UTC ซึ่งเป็นชั่วขณะเดียวทั่วโลก คุณเลือกเฉพาะโซนที่จะแสดงเป็นเวลานาฬิกาแขวน"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "เหตุใดเวลาของลูกค้าจึงแตกต่างจากแบ็กเอนด์ของฉัน",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "โดยปกติแล้วจะเป็นช่องว่างของเขตเวลา แบ็กเอนด์มักจะใช้เวลา UTC หรือปักกิ่ง ในขณะที่ลูกค้าระบุเวลาท้องถิ่นของตน แปลงทันทีเดียวกันให้เป็นทั้งสองโซนเพื่อจัดตำแหน่ง"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "เวลาออมแสงส่งผลต่อการแปลงหรือไม่",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ใช่. สหรัฐอเมริกาฝั่งตะวันออก ลอนดอน และซิดนีย์ ปฏิบัติตาม DST ดังนั้นช่องว่างจากปักกิ่งจึงเปลี่ยนไปตามฤดูกาล เครื่องมือนี้ใช้ข้อมูล IANA ในตัวของเบราว์เซอร์เพื่อจัดการโดยอัตโนมัติ"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ปัญหา 2038 คืออะไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "การประทับเวลา 32-bit ที่ลงชื่อไว้จะขยายสูงสุดที่ 2038-01-19 03:14:07 UTC จากนั้นจึงโอเวอร์โฟลว์ ระบบสมัยใหม่ใช้ 64-bit ดังนั้นการสนับสนุนทุกวันจึงไม่ต้องกังวล แต่ให้ดูบันทึกของระบบเก่าๆ"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "เครื่องมืออัปโหลดข้อมูลของฉันหรือไม่",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ไม่ การแปลงการประทับเวลาและโซนเวลาทั้งหมดจะทำงานภายในเบราว์เซอร์ของคุณ - ไม่มีการอัพโหลดหรือจัดเก็บอะไรเลย"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "สามารถแปลงการประทับเวลามิลลิวินาทีได้หรือไม่",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ใช่. 13 หลักแยกวิเคราะห์เป็นมิลลิวินาที 10 เป็นวินาที คุณยังสามารถวางวันที่ ISO (เช่น 2026-06-30T12:00:00Z) เพื่อเรียกการประทับเวลากลับมาได้"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/id/">Bahasa Indonesia</a> · <strong>ไทย</strong> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Unix Timestamp และตัวแปลงหลายโซนเวลา</h1>
+<p class="byline"><a href="/th/about-editor/" rel="author">周明</a> · อัปเดตเมื่อ 2026-06</p>
+<p>การสนับสนุนอีคอมเมิร์ซมักจะจัดการกับการประทับเวลา Unix เพื่อบันทึกคำสั่งซื้อและลูกค้าที่กระจายไปตามโซนเวลา นี่เป็นเครื่องมือบนเว็บอย่างแท้จริง: แปลงการประทับเวลาและวันที่ของ Unix ทั้งสองวิธี และดูเวลาปัจจุบันในโซนทั่วไปแบบเรียลไทม์ เพื่อให้คุณสามารถจัดการสนทนาข้ามเขตเวลาและเรียงลำดับเวลาได้อย่างรวดเร็ว ทุกอย่างทำงานภายในเบราว์เซอร์ของคุณ - ไม่มีการอัพโหลดหรือติดตั้งอะไรเลย</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="การประทับเวลา Yi Waiwai และแบนเนอร์ตัวแปลงโซนเวลา" width="1120" height="360" fetchpriority="high"></picture><figcaption>แปลงการประทับเวลา Unix และโซนเวลาออนไลน์เพื่อรองรับอีคอมเมิร์ซข้ามพรมแดน</figcaption></figure>
+<h2>แปลงการประทับเวลาหรือวันที่</h2><p>วางการประทับเวลา Unix (10 หลักสำหรับวินาที, 13 สำหรับมิลลิวินาที) หรือวันที่ ISO ลงในช่องด้านล่างแล้วแปลง ตารางด้านบนแสดงเวลาปัจจุบันในเขตเวลาที่พบบ่อยที่สุดในการสนับสนุนอีคอมเมิร์ซข้ามพรมแดน</p>
+<div class="rk"><div id="clk-out">กำลังอ่านโซนเวลา...</div><div class="conv"><input id="ts-in" placeholder="ป้อนการประทับเวลาหรือวันที่ของ Unix เช่น 1000000000" autocomplete="off"><button id="conv-go">แปลง</button></div><div id="conv-out"></div></div>
+<h2>การประทับเวลา Unix คืออะไรและจะแปลงอย่างไร</h2><p>การประทับเวลา Unix คือจำนวนวินาทีที่ไม่ก้าวกระโดดนับตั้งแต่ยุค UTC วันที่ 1 มกราคม 1970 เวลา 00:00:00 น. โดยนับ 86400 วินาทีต่อวัน ตัวอย่างเช่น 1000000000 คือ 2001-09-09 01:46:40 UTC โปรดทราบว่าการประทับเวลา 32-bit ที่ลงนามแล้วล้นบน 2038-01-19 03:14:07 UTC (ปัญหา 2038)</p>
+<table><tr><th>แนวคิด</th><th>รายละเอียด</th></tr><tr><td>ยุค</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>การนับ</td><td>วินาทีที่ไม่ใช่ก้าวกระโดดนับตั้งแต่ยุค 86400 ต่อวัน</td></tr><tr><td>ตัวอย่าง</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>ปัญหาปี 2038</td><td>ลงนาม 32-bit ล้นที่ 2038-01-19 03:14:07 UTC</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>รูปที่ 1: ขั้นตอนการแปลงการประทับเวลา-วันที่ - ป้อนการประทับเวลาหรือวันที่ รับ UTC และเวลาต่อโซน</figcaption></figure>
+<h2>เขตเวลาทั่วไปในการสนับสนุนอีคอมเมิร์ซ</h2><p>ด้านล่างนี้คือข้อตกลงการสนับสนุนข้ามพรมแดนในเขตเวลาส่วนใหญ่พร้อมชื่อ IANA เครื่องมือนี้ใช้ฐานข้อมูลเขตเวลาในตัวของเบราว์เซอร์เพื่อแปลงแบบเรียลไทม์ (จัดการการปรับเวลากลางวันโดยอัตโนมัติ) ดังนั้นคุณจึงไม่ต้องบวกหรือลบออฟเซ็ตด้วยมือ แมปเมืองของลูกค้ากับโซนใดโซนหนึ่งเหล่านี้เพื่อทราบเวลาท้องถิ่น</p>
+<table><tr><th>ภูมิภาค</th><th>โซนเวลา IANA</th><th>ออฟเซ็ตทั่วไป</th></tr><tr><td>ปักกิ่ง/จีน</td><td>Asia/Shanghai</td><td>UTC+8 (ตลอดทั้งปี)</td></tr><tr><td>เวลาสากลเชิงพิกัด</td><td>เวลาสากลเชิงพิกัด</td><td>UTC+0</td></tr><tr><td>สหรัฐอเมริกาตะวันออก</td><td>America/New_York</td><td>UTC-5 / -4 (เวลาออมแสง)</td></tr><tr><td>สหรัฐอเมริกาแปซิฟิก</td><td>America/Los_Angeles</td><td>UTC-8 / -7 (เวลาออมแสง)</td></tr><tr><td>ลอนดอน</td><td>Europe/London</td><td>UTC+0 / +1 (เวลาออมแสง)</td></tr><tr><td>โตเกียว</td><td>Asia/Tokyo</td><td>UTC+9 (ตลอดทั้งปี)</td></tr><tr><td>จาการ์ตา</td><td>Asia/Jakarta</td><td>UTC+7 (ตลอดทั้งปี)</td></tr><tr><td>ซิดนีย์</td><td>Australia/Sydney</td><td>UTC+10 / +11 (เวลาออมแสง)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>รูปที่ 2: การชดเชย UTC ของโซนทั่วไป (เบราว์เซอร์ที่มี DST จะจัดการการแปลงจริง)</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="เขตเวลาการสนับสนุนอีคอมเมิร์ซทั่วไปและแผนภูมิออฟเซ็ต UTC" width="1120" height="560" loading="lazy"></picture><figcaption>เขตเวลาทั่วไปในการสนับสนุนข้ามพรมแดน โดยสรุปการชดเชย UTC ได้อย่างรวดเร็ว</figcaption></figure>
+<section id="data2026">
+<h2>ภาพรวมโซนเวลาทั่วโลกและ DST ปี 2026 (ประมาณการ)</h2><p>สำหรับการสนับสนุนข้ามพรมแดน การทราบภูมิทัศน์จะช่วยได้มาก โดยในปี 2026 ประมาณหนึ่งในสามของประเทศทั่วโลกใช้เวลาออมแสง (ประมาณ 34% ในปี 2023) โดยกระจุกตัวอยู่ในยุโรปและอเมริกาเหนือ ในขณะที่เอเชียและแถบเส้นศูนย์สูตรของแอฟริกาส่วนใหญ่ไม่มี ดังนั้นการชดเชยจากจีนจึงคงที่ตลอดทั้งปี การชดเชย UTC ทั่วโลกครอบคลุมช่วง UTC-12 to UTC+14</p>
+<table><tr><th>แนวคิด</th><th>2026</th></tr><tr><td>ประเทศที่ปฏิบัติตาม DST (2023)</td><td>≈ 34%</td></tr><tr><td>ช่วงออฟเซ็ต UTC ทั่วโลก</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>ยุคยูนิกซ์</td><td>1970-01-01 UTC</td></tr><tr><td>2038 ช่วงเวลาล้น</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">การประมาณการ ไม่ใช่โดยตรง: ส่วนแบ่ง DST มาจาก Wikipedia (ประมาณ 34% ในปี 2023); โซนเวลาและการชดเชยเป็นไปตามฐานข้อมูลโซนเวลาของ IANA วันที่เริ่มต้นและสิ้นสุด DST จะเปลี่ยนแปลงเล็กน้อยในแต่ละปี ดังนั้นให้ไว้วางใจเครื่องมือ (ข้อมูล IANA ของเบราว์เซอร์) สำหรับการแปลงจริง</p></section>
+<div class="cta"><h2>ดาวน์โหลด Yi Waiwai</h2><p>ต้องการการตอบกลับอย่างรวดเร็วและการจัดการสคริปต์ที่เร็วขึ้นสำหรับการสนับสนุนอีคอมเมิร์ซหรือไม่ รับแอปเดสก์ท็อป Yi Waiwai จากหน้าดาวน์โหลดอย่างเป็นทางการ:</p><a class="dl" href="https://yiwaiwaiservice.com/download/">ดาวน์โหลด Yi Waiwai (เป็นทางการ)</a></div>
+<h2>คำถามที่พบบ่อย</h2><details><summary>ฉันจะแปลงการประทับเวลา Unix เป็นวันที่ได้อย่างไร</summary><p>วางการประทับเวลาลงในช่องด้านบนแล้วแปลง 10 หลักคือวินาที 13 หลักคือมิลลิวินาที เครื่องมือนี้แสดงเวลาที่ตรงกันใน UTC และโซนเช่นปักกิ่งและสหรัฐอเมริกาฝั่งตะวันออก</p></details><details><summary>การประทับเวลาอยู่ในเขตเวลาใด</summary><p>การประทับเวลา Unix ไม่มีเขตเวลา - เป็นจำนวนวินาทีตั้งแต่ 1970-01-01 00:00:00 UTC ซึ่งเป็นชั่วขณะเดียวทั่วโลก คุณเลือกเฉพาะโซนที่จะแสดงเป็นเวลานาฬิกาแขวน</p></details><details><summary>เหตุใดเวลาของลูกค้าจึงแตกต่างจากแบ็กเอนด์ของฉัน</summary><p>โดยปกติแล้วจะเป็นช่องว่างของเขตเวลา แบ็กเอนด์มักจะใช้เวลา UTC หรือปักกิ่ง ในขณะที่ลูกค้าระบุเวลาท้องถิ่นของตน แปลงทันทีเดียวกันให้เป็นทั้งสองโซนเพื่อจัดตำแหน่ง</p></details><details><summary>เวลาออมแสงส่งผลต่อการแปลงหรือไม่</summary><p>ใช่. สหรัฐอเมริกาฝั่งตะวันออก ลอนดอน และซิดนีย์ ปฏิบัติตาม DST ดังนั้นช่องว่างจากปักกิ่งจึงเปลี่ยนไปตามฤดูกาล เครื่องมือนี้ใช้ข้อมูล IANA ในตัวของเบราว์เซอร์เพื่อจัดการโดยอัตโนมัติ</p></details><details><summary>ปัญหา 2038 คืออะไร?</summary><p>การประทับเวลา 32-bit ที่ลงชื่อไว้จะขยายสูงสุดที่ 2038-01-19 03:14:07 UTC จากนั้นจึงโอเวอร์โฟลว์ ระบบสมัยใหม่ใช้ 64-bit ดังนั้นการสนับสนุนทุกวันจึงไม่ต้องกังวล แต่ให้ดูบันทึกของระบบเก่าๆ</p></details><details><summary>เครื่องมืออัปโหลดข้อมูลของฉันหรือไม่</summary><p>ไม่ การแปลงการประทับเวลาและโซนเวลาทั้งหมดจะทำงานภายในเบราว์เซอร์ของคุณ - ไม่มีการอัพโหลดหรือจัดเก็บอะไรเลย</p></details><details><summary>สามารถแปลงการประทับเวลามิลลิวินาทีได้หรือไม่</summary><p>ใช่. 13 หลักแยกวิเคราะห์เป็นมิลลิวินาที 10 เป็นวินาที คุณยังสามารถวางวันที่ ISO (เช่น 2026-06-30T12:00:00Z) เพื่อเรียกการประทับเวลากลับมาได้</p></details>
+<h2>การตรวจสอบจริงอย่างรวดเร็ว</h2><ul class="scenes"><li>ลูกค้าจากต่างประเทศถามว่าคำสั่งซื้อของพวกเขาถูกจัดส่งเมื่อใด: แบ็กเอนด์จะจัดเก็บการประทับเวลา UTC; แปลงเป็นโซนลูกค้าและบอกเวลาท้องถิ่นเพื่อหลีกเลี่ยงความสับสน</li><li>การกำหนดเวลาการสตรีมสดหรือการขายข้ามเขตเวลา: แปลงเวลาปักกิ่งเป็นเวลาทางตะวันออกของสหรัฐอเมริกาและลอนดอนเพื่อยืนยันช่องท้องถิ่น</li><li>การแก้ไขปัญหาบันทึก: API คำสั่งซื้อส่งคืนการประทับเวลา 10 หลัก วางลงไปเพื่ออ่านเวลาของมนุษย์และระบุช่วงเวลาที่แน่นอน</li><li>ลูกค้าบอกว่าเป็นวันถัดไปแล้ว: ข้ามออฟเซ็ตใหญ่หรือเส้นวันที่ ให้ยืนยันวันที่ท้องถิ่นแต่ละด้าน เพื่อที่คุณจะได้ไม่เสนอราคาผิดวัน</li></ul>
+<div class="related"><h2>ที่เกี่ยวข้อง</h2><ul>
+<li><a href="/th/about-editor/">เกี่ยวกับผู้เขียน: Zhou Ming</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>ข้อเท็จจริงการประทับเวลาและเขตเวลาที่รวบรวมจาก Wikipedia (เวลา Unix เวลาออมแสง) และฐานข้อมูลเขตเวลา IANA การแปลงใช้ API เบราว์เซอร์มาตรฐาน (Date / Intl) และใช้สำหรับการอ้างอิงเท่านั้น<br>โดย 周明 · โปรแกรมแก้ไขเนื้อหา · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "การประทับเวลาปัจจุบันของ Unix", "local_tz": "เขตเวลาของคุณ", "region": "ภูมิภาค", "tz_name": "โซนเวลา IANA", "local_time": "เวลาท้องถิ่น", "detecting": "กำลังอ่านโซนเวลา...", "unix_ts": "การประทับเวลา Unix", "bad_input": "แยกวิเคราะห์ไม่ได้ - ป้อนการประทับเวลา Unix (10/13 หลัก) หรือวันที่", "convert": "แปลง", "ph": "ป้อนการประทับเวลาหรือวันที่ของ Unix เช่น 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
