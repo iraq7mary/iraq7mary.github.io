@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unix Timestamp & Time Zone Converter - epoch to date, multi-zone for support</title>
+<meta name="description" content="A pure web tool: convert Unix timestamps to dates and back, and read the current time across Beijing, UTC, US Eastern and Pacific, London and Tokyo. Built for e-commerce customer service handling cross-timezone orders and overseas customers. Runs locally, nothing uploaded.">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unix Timestamp &amp; Time Zone Converter - epoch to date, multi-zone for support">
+<meta property="og:description" content="A pure web tool: convert Unix timestamps to dates and back, and read the current time across Beijing, UTC, US Eastern and Pacific, London and Tokyo. Built for e-commerce customer service handling cross-timezone orders and overseas customers. Runs locally, nothing uploaded.">
+<meta property="og:locale" content="en_US"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Unix Timestamp and Multi-Time-Zone Converter",
+   "url": "https://iraq7mary.github.io/en/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "en",
+   "description": "A pure web tool: convert Unix timestamps to dates and back, and read the current time across Beijing, UTC, US Eastern and Pacific, London and Tokyo. Built for e-commerce customer service handling cross-timezone orders and overseas customers. Runs locally, nothing uploaded.",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/en/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "en",
+   "url": "https://iraq7mary.github.io/en/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I convert a Unix timestamp to a date?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Paste the timestamp into the box above and convert. 10 digits are seconds, 13 are milliseconds; the tool shows the matching time in UTC and zones like Beijing and US Eastern."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which time zone is a timestamp in?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A Unix timestamp has no time zone - it is the number of seconds since 1970-01-01 00:00:00 UTC, a single global instant; you only pick a zone to display it as a wall-clock time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does the customer time differ from my backend?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually a time-zone gap. Backends often use UTC or Beijing time, while the customer states their local time. Convert the same instant into both zones to align."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does daylight saving affect conversion?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. US Eastern, London and Sydney observe DST, so their gap from Beijing shifts by season. The tool uses the browser built-in IANA data to handle it automatically."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the 2038 problem?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A signed 32-bit timestamp maxes out at 2038-01-19 03:14:07 UTC and then overflows. Modern systems use 64-bit, so everyday support need not worry, but watch older system logs."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the tool upload my data?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. All timestamp and time-zone conversion runs locally in your browser - nothing is uploaded or stored."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can it convert millisecond timestamps?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. 13 digits parse as milliseconds, 10 as seconds; you can also paste an ISO date (such as 2026-06-30T12:00:00Z) to get the timestamp back."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <strong>English</strong> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Unix Timestamp and Multi-Time-Zone Converter</h1>
+<p class="byline"><a href="/en/about-editor/" rel="author">周明</a> · Updated 2026-06</p>
+<p>E-commerce support often deals with Unix timestamps in order logs and customers spread across time zones. This is a pure web tool: convert Unix timestamps and dates both ways, and see the current time in common zones in real time, so you can align cross-timezone conversations and order times quickly. Everything runs locally in your browser - nothing is uploaded or installed.</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="Yi Waiwai timestamp and time zone converter banner" width="1120" height="360" fetchpriority="high"></picture><figcaption>Convert Unix timestamps and time zones online for cross-border e-commerce support</figcaption></figure>
+<h2>Convert a timestamp or date</h2><p>Paste a Unix timestamp (10 digits for seconds, 13 for milliseconds) or an ISO date into the box below and convert. The table above shows the current time across the time zones most common in cross-border e-commerce support.</p>
+<div class="rk"><div id="clk-out">Reading time zones...</div><div class="conv"><input id="ts-in" placeholder="Enter a Unix timestamp or date, e.g. 1000000000" autocomplete="off"><button id="conv-go">Convert</button></div><div id="conv-out"></div></div>
+<h2>What a Unix timestamp is and how it converts</h2><p>A Unix timestamp is the number of non-leap seconds since the UTC epoch, 1 January 1970 00:00:00, counting 86400 seconds per day. For example, 1000000000 is 2001-09-09 01:46:40 UTC. Note that a signed 32-bit timestamp overflows on 2038-01-19 03:14:07 UTC (the 2038 problem).</p>
+<table><tr><th>Concept</th><th>Detail</th></tr><tr><td>Epoch</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>Counting</td><td>Non-leap seconds since epoch, 86400 per day</td></tr><tr><td>Example</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>2038 problem</td><td>Signed 32-bit overflows at 2038-01-19 03:14:07 UTC</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>Fig 1: timestamp-date conversion flow - enter a timestamp or date, get UTC and per-zone times.</figcaption></figure>
+<h2>Time zones common in e-commerce support</h2><p>Below are the time zones cross-border support deals with most, with their IANA names. The tool uses the browser built-in time-zone database to convert in real time (handling daylight saving automatically), so you never add or subtract offsets by hand. Map the customer city to one of these zones to know their local time.</p>
+<table><tr><th>Region</th><th>IANA time zone</th><th>Typical offset</th></tr><tr><td>Beijing / China</td><td>Asia/Shanghai</td><td>UTC+8 (all year)</td></tr><tr><td>Coordinated Universal Time</td><td>UTC</td><td>UTC+0</td></tr><tr><td>US Eastern</td><td>America/New_York</td><td>UTC-5 / -4 (DST)</td></tr><tr><td>US Pacific</td><td>America/Los_Angeles</td><td>UTC-8 / -7 (DST)</td></tr><tr><td>London</td><td>Europe/London</td><td>UTC+0 / +1 (DST)</td></tr><tr><td>Tokyo</td><td>Asia/Tokyo</td><td>UTC+9 (all year)</td></tr><tr><td>Jakarta</td><td>Asia/Jakarta</td><td>UTC+7 (all year)</td></tr><tr><td>Sydney</td><td>Australia/Sydney</td><td>UTC+10 / +11 (DST)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>Fig 2: UTC offsets of common zones (actual conversion is handled by the browser with DST).</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="Common e-commerce support time zones and UTC offsets chart" width="1120" height="560" loading="lazy"></picture><figcaption>Time zones common in cross-border support, with UTC offsets at a glance</figcaption></figure>
+<section id="data2026">
+<h2>2026 global time zone and DST overview (estimate)</h2><p>For cross-border support it helps to know the landscape: as of 2026, roughly a third of the world countries observe daylight saving time (about 34% in 2023), concentrated in Europe and North America, while most of Asia and equatorial Africa do not - so their offset from China stays fixed all year. Global UTC offsets span UTC-12 to UTC+14.</p>
+<table><tr><th>Concept</th><th>2026</th></tr><tr><td>Countries observing DST (2023)</td><td>≈ 34%</td></tr><tr><td>Global UTC offset range</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>Unix epoch</td><td>1970-01-01 UTC</td></tr><tr><td>2038 overflow moment</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">Estimate, not first-hand: the DST share is from Wikipedia (about 34% in 2023); time zones and offsets follow the IANA time-zone database; DST start and end dates shift slightly each year, so trust the tool (browser IANA data) for actual conversion.</p></section>
+<div class="cta"><h2>Download Yi Waiwai</h2><p>Need faster quick-reply and script management for e-commerce support? Get the Yi Waiwai desktop app from the official download page:</p><a class="dl" href="https://yiwaiwaiservice.com/download/">Download Yi Waiwai (official)</a></div>
+<h2>Frequently asked questions</h2><details><summary>How do I convert a Unix timestamp to a date?</summary><p>Paste the timestamp into the box above and convert. 10 digits are seconds, 13 are milliseconds; the tool shows the matching time in UTC and zones like Beijing and US Eastern.</p></details><details><summary>Which time zone is a timestamp in?</summary><p>A Unix timestamp has no time zone - it is the number of seconds since 1970-01-01 00:00:00 UTC, a single global instant; you only pick a zone to display it as a wall-clock time.</p></details><details><summary>Why does the customer time differ from my backend?</summary><p>Usually a time-zone gap. Backends often use UTC or Beijing time, while the customer states their local time. Convert the same instant into both zones to align.</p></details><details><summary>Does daylight saving affect conversion?</summary><p>Yes. US Eastern, London and Sydney observe DST, so their gap from Beijing shifts by season. The tool uses the browser built-in IANA data to handle it automatically.</p></details><details><summary>What is the 2038 problem?</summary><p>A signed 32-bit timestamp maxes out at 2038-01-19 03:14:07 UTC and then overflows. Modern systems use 64-bit, so everyday support need not worry, but watch older system logs.</p></details><details><summary>Does the tool upload my data?</summary><p>No. All timestamp and time-zone conversion runs locally in your browser - nothing is uploaded or stored.</p></details><details><summary>Can it convert millisecond timestamps?</summary><p>Yes. 13 digits parse as milliseconds, 10 as seconds; you can also paste an ISO date (such as 2026-06-30T12:00:00Z) to get the timestamp back.</p></details>
+<h2>Quick real-world checks</h2><ul class="scenes"><li>An overseas customer asks when their order shipped: the backend stores a UTC timestamp; convert it to the customer zone and tell them their local time to avoid confusion.</li><li>Scheduling a cross-timezone livestream or sale: convert Beijing time to US Eastern and London to confirm the local slot works.</li><li>Log troubleshooting: an order API returns a 10-digit timestamp; paste it in to read the human time and pinpoint the exact moment.</li><li>A customer says it is already the next day: across large offsets or the date line, confirm each side local date so you do not quote the wrong day.</li></ul>
+<div class="related"><h2>Related</h2><ul>
+<li><a href="/en/about-editor/">About the author: Zhou Ming</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>Timestamp and time-zone facts compiled from Wikipedia (Unix time, daylight saving time) and the IANA time-zone database; conversion uses standard browser APIs (Date / Intl) and is for reference only.<br>By 周明 · content editor · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "Current Unix timestamp", "local_tz": "Your time zone", "region": "Region", "tz_name": "IANA time zone", "local_time": "Local time", "detecting": "Reading time zones...", "unix_ts": "Unix timestamp (s)", "bad_input": "Could not parse - enter a Unix timestamp (10/13 digits) or a date", "convert": "Convert", "ph": "Enter a Unix timestamp or date, e.g. 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
