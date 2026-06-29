@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="my"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unix Timestamp & Time Zone Converter - ပံ့ပိုးမှုအတွက် ယနေ့အထိ ခေတ်ကာလ၊</title>
+<meta name="description" content="သန့်ရှင်းသောဝဘ်တူးလ်- Unix အချိန်တံဆိပ်တုံးများကို ရက်စွဲနှင့်နောက်သို့ ပြောင်းပြီး ပေကျင်း၊ UTC၊ US အရှေ့ပိုင်းနှင့် ပစိဖိတ်၊ လန်ဒန်နှင့် တိုကျိုတို့တွင် လက်ရှိအချိန်ကို ဖတ်ပါ။ e-commerce ဖောက်သည်ဝန်ဆောင်မှုအတွက် အချိန်ပိုင်းဇုန်အမှာစာများနှင့် နိုင်ငံရပ်ခြားဖောက်သည်များကို ကိုင်တွယ်ဖြေရှင်းရန်အတွက် တည်ဆောက်ထားသည်။ စက်တွင်းတွင် အလုပ်လုပ်သည်၊ အပ်လုဒ်လုပ်ထားခြင်းမရှိပါ။">
+<meta name="author" content="周明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website"><meta property="og:title" content="Unix Timestamp &amp; Time Zone Converter - ပံ့ပိုးမှုအတွက် ယနေ့အထိ ခေတ်ကာလ၊">
+<meta property="og:description" content="သန့်ရှင်းသောဝဘ်တူးလ်- Unix အချိန်တံဆိပ်တုံးများကို ရက်စွဲနှင့်နောက်သို့ ပြောင်းပြီး ပေကျင်း၊ UTC၊ US အရှေ့ပိုင်းနှင့် ပစိဖိတ်၊ လန်ဒန်နှင့် တိုကျိုတို့တွင် လက်ရှိအချိန်ကို ဖတ်ပါ။ e-commerce ဖောက်သည်ဝန်ဆောင်မှုအတွက် အချိန်ပိုင်းဇုန်အမှာစာများနှင့် နိုင်ငံရပ်ခြားဖောက်သည်များကို ကိုင်တွယ်ဖြေရှင်းရန်အတွက် တည်ဆောက်ထားသည်။ စက်တွင်းတွင် အလုပ်လုပ်သည်၊ အပ်လုဒ်လုပ်ထားခြင်းမရှိပါ။">
+<meta property="og:locale" content="my_MM"><meta property="og:image" content="https://iraq7mary.github.io/img/cover.png">
+<meta property="og:image:width" content="1120"><meta property="og:image:height" content="360">
+<link rel="canonical" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="zh-Hans" href="https://iraq7mary.github.io/">
+<link rel="alternate" hreflang="en" href="https://iraq7mary.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://iraq7mary.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://iraq7mary.github.io/zh-tw/">
+<link rel="alternate" hreflang="id" href="https://iraq7mary.github.io/id/">
+<link rel="alternate" hreflang="th" href="https://iraq7mary.github.io/th/">
+<link rel="alternate" hreflang="vi" href="https://iraq7mary.github.io/vi/">
+<link rel="alternate" hreflang="ms" href="https://iraq7mary.github.io/ms/">
+<link rel="alternate" hreflang="fil" href="https://iraq7mary.github.io/fil/">
+<link rel="alternate" hreflang="km" href="https://iraq7mary.github.io/km/">
+<link rel="alternate" hreflang="lo" href="https://iraq7mary.github.io/lo/">
+<link rel="alternate" hreflang="my" href="https://iraq7mary.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://iraq7mary.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Unix Timestamp နှင့် Multi-Time-Zone Converter",
+   "url": "https://iraq7mary.github.io/my/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "my",
+   "description": "သန့်ရှင်းသောဝဘ်တူးလ်- Unix အချိန်တံဆိပ်တုံးများကို ရက်စွဲနှင့်နောက်သို့ ပြောင်းပြီး ပေကျင်း၊ UTC၊ US အရှေ့ပိုင်းနှင့် ပစိဖိတ်၊ လန်ဒန်နှင့် တိုကျိုတို့တွင် လက်ရှိအချိန်ကို ဖတ်ပါ။ e-commerce ဖောက်သည်ဝန်ဆောင်မှုအတွက် အချိန်ပိုင်းဇုန်အမှာစာများနှင့် နိုင်ငံရပ်ခြားဖောက်သည်များကို ကိုင်တွယ်ဖြေရှင်းရန်အတွက် တည်ဆောက်ထားသည်။ စက်တွင်းတွင် အလုပ်လုပ်သည်၊ အပ်လုဒ်လုပ်ထားခြင်းမရှိပါ။",
+   "isAccessibleForFree": true,
+   "browserRequirements": "Requires JavaScript",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "author": {
+    "@type": "Person",
+    "name": "周明",
+    "url": "https://iraq7mary.github.io/my/about-editor/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "my",
+   "url": "https://iraq7mary.github.io/my/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Unix အချိန်တံဆိပ်ကို ရက်စွဲတစ်ခုသို့ မည်သို့ပြောင်းရမည်နည်း။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "အချိန်တံဆိပ်ကို အပေါ်က အကွက်ထဲသို့ ကူးထည့်ကာ ပြောင်းလိုက်ပါ။ ဂဏန်း ၁၀ လုံးသည် စက္ကန့်၊ ၁၃ သည် မီလီစက္ကန့်ဖြစ်သည်။ ကိရိယာသည် UTC နှင့် Beijing နှင့် US Eastern ကဲ့သို့သော ဇုန်များတွင် ကိုက်ညီသည့်အချိန်ကို ပြသသည်။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "မည်သည့်အချိန်ဇုန်သည် အချိန်တံဆိပ်တုံးဖြစ်သနည်း။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Unix အချိန်တံဆိပ်တုံးသည် အချိန်ဇုန်မရှိပါ - ၎င်းသည် ကမ္ဘာလုံးဆိုင်ရာ လက်ငင်းတစ်ခုတည်းဖြစ်သော 1970-01-01 00:00:00 UTC မှစပြီး စက္ကန့်အရေအတွက်ဖြစ်သည်။ နံရံနာရီအချိန်အဖြစ် ပြသရန် ဇုန်တစ်ခုကိုသာ သင်ရွေးချယ်ပါ။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ဖောက်သည်အချိန်သည် ကျွန်ုပ်၏နောက်ကွယ်မှ အဘယ်ကြောင့်ကွာခြားသနည်း။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "အချိန်ဇုန် ကွာဟမှု ရှိတတ်သည်။ ဖောက်သည်သည် ၎င်းတို့၏ ဒေသစံတော်ချိန်ကို ဖော်ပြနေချိန်တွင် နောက်ခံလူများသည် UTC သို့မဟုတ် ပေကျင်းအချိန်ကို အသုံးပြုလေ့ရှိသည်။ ချိန်ညှိရန် တူညီသောလက်ငင်းကို ဇုန်နှစ်ခုလုံးသို့ ပြောင်းပါ။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "နေ့အလင်းရောင်ချွေတာခြင်းသည် ပြောင်းလဲခြင်းအပေါ် သက်ရောက်မှုရှိပါသလား။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ဟုတ်ကဲ့။ US အရှေ့ပိုင်း၊ လန်ဒန်နှင့် ဆစ်ဒနီတို့သည် DST ကို စောင့်ကြည့်နေသောကြောင့် ပေကျင်းနှင့် ၎င်းတို့၏ ကွာဟချက်သည် ရာသီအလိုက် ပြောင်းသွားပါသည်။ ကိရိယာသည် ၎င်းကို အလိုအလျောက် ကိုင်တွယ်ရန် ဘရောက်ဆာ built-in IANA ဒေတာကို အသုံးပြုသည်။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "2038 ပြဿနာကဘာလဲ။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "လက်မှတ်ရေးထိုးထားသော 32-bit အချိန်တံဆိပ်သည် 2038-01-19 03:14:07 UTC တွင် အများဆုံးထွက်ပြီး လျှံသွားပါသည်။ ခေတ်မီစနစ်များသည် 64-bit ကိုအသုံးပြုထားသောကြောင့် နေ့စဥ်ပံ့ပိုးမှုမှာ စိတ်ပူစရာမလိုသော်လည်း စနစ်ဟောင်းမှတ်တမ်းများကိုကြည့်ပါ။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ကိရိယာသည် ကျွန်ုပ်၏ဒေတာကို အပ်လုဒ်လုပ်ပါသလား။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "နံပါတ်၊ အချိန်တံဆိပ်နှင့် အချိန်ဇုန်ပြောင်းလဲခြင်းအားလုံးသည် သင့်ဘရောက်ဆာတွင် စက်တွင်းတွင် လုပ်ဆောင်သည် - မည်သည့်အရာကိုမျှ အပ်လုဒ်လုပ်ထားခြင်း သို့မဟုတ် သိမ်းဆည်းထားခြင်းမရှိပါ။"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "၎င်းသည် မီလီစက္ကန့်အချိန်တံဆိပ်များကို ပြောင်းလဲနိုင်ပါသလား။",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ဟုတ်ကဲ့။ ဂဏန်း 13 လုံးကို မီလီစက္ကန့်အဖြစ် ခွဲခြမ်းစိတ်ဖြာပြီး၊ 10 စက္ကန့်အဖြစ်၊ အချိန်တံဆိပ်ပြန်ရရန် ISO ရက်စွဲကိုလည်း ကူးထည့်နိုင်သည်။"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head><body><div class="wrap"><main>
+<nav class="lang">Language: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/th/">ไทย</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fil/">Filipino</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/lo/">ພາສາລາວ</a> · <strong>မြန်မာ</strong></nav>
+<h1>Unix Timestamp နှင့် Multi-Time-Zone Converter</h1>
+<p class="byline"><a href="/my/about-editor/" rel="author">周明</a> · 2026-06 တွင် အပ်ဒိတ်လုပ်ထားသည်။</p>
+<p>E-commerce ပံ့ပိုးကူညီမှုသည် အမှာစာမှတ်တမ်းများနှင့် အချိန်ဇုန်များတစ်လျှောက် ဖောက်သည်များဖြန့်ကျက်ရန်အတွက် Unix အချိန်တံဆိပ်တုံးများကို မကြာခဏပေးသည်။ ၎င်းသည် သန့်ရှင်းသော ဝဘ်တူးလ်တစ်ခုဖြစ်သည်- Unix အချိန်တံဆိပ်တုံးများနှင့် ရက်စွဲများကို နည်းလမ်းနှစ်မျိုးဖြင့် ပြောင်းလဲကာ ဘုံဇုန်များတွင် လက်ရှိအချိန်ကို အချိန်နှင့်တပြေးညီ ကြည့်ရှုနိုင်သောကြောင့် သင်သည် အချိန်ဇုန်စကားပြောဆိုမှုများကို ချိန်ညှိနိုင်ပြီး အချိန်များကို အမြန်မှာယူနိုင်ပါသည်။ အရာအားလုံးကို သင့်ဘရောက်ဆာတွင် စက်တွင်းတွင် လုပ်ဆောင်သည် - မည်သည့်အရာမျှ အပ်လုဒ်လုပ်ထားခြင်း သို့မဟုတ် ထည့်သွင်းထားခြင်းမရှိပါ။</p>
+<figure><picture><source type="image/webp" srcset="/img/cover.webp"><img src="/img/cover.png" alt="Yi Waiwai အချိန်တံဆိပ်နှင့် စံတော်ချိန်ပြောင်းလဲသည့် နဖူးစည်းပုံ" width="1120" height="360" fetchpriority="high"></picture><figcaption>နယ်စပ်ဖြတ်ကျော် e-commerce အထောက်အပံ့အတွက် Unix အချိန်တံဆိပ်တုံးများနှင့် အချိန်ဇုန်များကို အွန်လိုင်းတွင် ပြောင်းပါ။</figcaption></figure>
+<h2>အချိန်တံဆိပ် သို့မဟုတ် ရက်စွဲကို ပြောင်းပါ။</h2><p>Unix အချိန်တံဆိပ်ကို (စက္ကန့်အတွက် ဂဏန်း ၁၀ လုံး၊ မီလီစက္ကန့်များအတွက် ၁၃) သို့မဟုတ် ISO ရက်စွဲကို အောက်ပါအကွက်ထဲသို့ ကူးထည့်ကာ ပြောင်းလိုက်ပါ။ အထက်ပါဇယားသည် နယ်စပ်ဖြတ်ကျော် e-commerce ပံ့ပိုးမှုတွင် အသုံးအများဆုံးအချိန်ဇုန်များတစ်လျှောက် လက်ရှိအချိန်ကို ပြသထားသည်။</p>
+<div class="rk"><div id="clk-out">စာဖတ်ချိန်ဇုန်များ...</div><div class="conv"><input id="ts-in" placeholder="Unix အချိန်တံဆိပ် သို့မဟုတ် ရက်စွဲကို ထည့်ပါ၊ ဥပမာ။ 1000000000" autocomplete="off"><button id="conv-go">ပြောင်းပါ။</button></div><div id="conv-out"></div></div>
+<h2>Unix အချိန်တံဆိပ်က ဘာလဲ၊ ဘယ်လိုပြောင်းလဲ။</h2><p>Unix အချိန်တံဆိပ်တုံးသည် UTC ခေတ်၊ 1 January 1970 00:00:00၊ နေ့တစ်နေ့လျှင် 86400 စက္ကန့်ကို ရေတွက်ပြီးကတည်းက ခုန်ပျံခြင်းမရှိသော စက္ကန့်အရေအတွက်ဖြစ်သည်။ ဥပမာ 1000000000 သည် 2001-09-09 01:46:40 UTC ဖြစ်သည်။ ရေးထိုးထားသော 32-bit အချိန်တံဆိပ်တုံးသည် 2038-01-19 03:14:07 UTC (2038 ပြဿနာ) တွင် ပြည့်သွားကြောင်း သတိပြုပါ။</p>
+<table><tr><th>အယူအဆ</th><th>အသေးစိတ်</th></tr><tr><td>ခေတ်</td><td>1970-01-01 00:00:00 UTC</td></tr><tr><td>ရေတွက်ခြင်း။</td><td>ခေတ်ကတည်းက ခုန်မနေသောစက္ကန့်၊ တစ်ရက်လျှင် 86400</td></tr><tr><td>ဥပမာ</td><td>1000000000 = 2001-09-09 01:46:40 UTC</td></tr><tr><td>2038 ပြဿနာ</td><td>32-bit တွင် 2038-01-19 03:14:07 UTC ပြည့်လျှံနေပါသည်။</td></tr></table>
+<figure><svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timestamp to date conversion flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">Timestamp - date conversion</text>
+<rect x="20" y="46" width="160" height="58" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="100" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0f766e">Input</text><text x="100" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#555">timestamp / date</text>
+<path d="M180 75 H220" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="220" y="46" width="170" height="58" rx="10" fill="#f7f8fb" stroke="#e2e8f0"/><text x="305" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#334155">Parse to instant</text><text x="305" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#64748b">seconds since epoch</text>
+<path d="M390 75 H430" stroke="#5aa" stroke-width="2" marker-end="url(#a)"/>
+<rect x="430" y="46" width="160" height="58" rx="10" fill="#ecfeff" stroke="#a5f3fc"/><text x="510" y="72" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#0e7490">Output</text><text x="510" y="92" text-anchor="middle" font-family="system-ui,Arial" font-size="11" fill="#555">UTC + each zone</text>
+<rect x="120" y="150" width="200" height="56" rx="10" fill="#f0fdfa" stroke="#99f6e4"/><text x="220" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">10 digits = seconds</text><text x="220" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#0f766e">13 digits = milliseconds</text>
+<rect x="360" y="150" width="240" height="56" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="480" y="174" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">epoch = 1970-01-01 UTC</text><text x="480" y="193" text-anchor="middle" font-family="system-ui,Arial" font-size="12" fill="#047857">86400 seconds per day</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#5aa"/></marker></defs>
+</svg><figcaption>ပုံ 1- အချိန်တံဆိပ်-ရက်စွဲ ပြောင်းလဲခြင်း စီးဆင်းမှု - အချိန်တံဆိပ် သို့မဟုတ် ရက်စွဲတစ်ခု ထည့်ပါ၊ UTC နှင့် ဇုန်အလိုက် အချိန်များကို ရယူပါ။</figcaption></figure>
+<h2>e-commerce ပံ့ပိုးမှုတွင် အသုံးများသော အချိန်ဇုန်များ</h2><p>အောက်တွင် အများစုသည် ၎င်းတို့၏ IANA အမည်များဖြင့် နယ်စပ်ဖြတ်ကျော် ပံ့ပိုးကူညီမှုပေးသည့် အချိန်ဇုန်များဖြစ်သည်။ ကိရိယာသည် အချိန်နှင့်တပြေးညီ ပြောင်းလဲရန် (နေ့ခင်းအလင်းရောင်ကို အလိုအလျောက် ထိန်းညှိပေးသည့်) ဘရောင်ဇာတွင် တပ်ဆင်ထားသည့် အချိန်ဇုန်ဒေတာဘေ့စ်ကို အသုံးပြုထားသောကြောင့် အော့ဖ်ဆက်များကို လက်ဖြင့် ထည့်ခြင်း သို့မဟုတ် နုတ်ခြင်းမျိုး ဘယ်တော့မှ မပြုလုပ်ပါ။ ဖောက်သည်မြို့ကို ၎င်းတို့၏ ဒေသအချိန်ကို သိရန် ဤဇုန်များထဲမှ တစ်ခုသို့ မြေပုံဆွဲပါ။</p>
+<table><tr><th>တိုင်းဒေသကြီး</th><th>IANA စံတော်ချိန်</th><th>ရိုးရိုးနှိမ်</th></tr><tr><td>ပေကျင်း/တရုတ်</td><td>Asia/Shanghai</td><td>UTC+8 (တစ်နှစ်ပတ်လုံး)</td></tr><tr><td>ညှိနှိုင်းထားသော Universal Time</td><td>UTC</td><td>UTC+0</td></tr><tr><td>US အရှေ့ပိုင်း</td><td>America/New_York</td><td>UTC-5 / -4 (DST)</td></tr><tr><td>အမေရိကန် ပစိဖိတ်</td><td>America/Los_Angeles</td><td>UTC-8 / -7 (DST)</td></tr><tr><td>လန်ဒန်</td><td>Europe/London</td><td>UTC+0 / +1 (DST)</td></tr><tr><td>တိုကျို</td><td>Asia/Tokyo</td><td>UTC+9 (တစ်နှစ်ပတ်လုံး)</td></tr><tr><td>ဂျကာတာ</td><td>Asia/Jakarta</td><td>UTC+7 (တစ်နှစ်ပတ်လုံး)</td></tr><tr><td>ဆစ်ဒနီ</td><td>Australia/Sydney</td><td>UTC+10 / +11 (DST)</td></tr></table>
+<figure><svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="UTC offsets of common time zones" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff">
+<text x="20" y="26" font-family="system-ui,Arial" font-size="15" font-weight="700" fill="#1d1d1f">UTC offsets - common support zones</text>
+<line x1="60" y1="170" x2="690" y2="170" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="60" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">-8</text>
+<text x="230" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">0 (UTC)</text>
+<text x="430" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+8</text>
+<text x="640" y="200" font-family="ui-monospace,monospace" font-size="10" fill="#94a3b8">+11</text>
+<g font-family="system-ui,Arial" font-size="11">
+<g><circle cx="80" cy="170" r="6" fill="#0ea5e9"/><text x="80" y="150" text-anchor="middle" fill="#0369a1">LA -8</text></g>
+<g><circle cx="140" cy="170" r="6" fill="#0ea5e9"/><text x="140" y="135" text-anchor="middle" fill="#0369a1">NY -5</text></g>
+<g><circle cx="230" cy="170" r="6" fill="#64748b"/><text x="230" y="150" text-anchor="middle" fill="#475569">London 0</text></g>
+<g><circle cx="430" cy="170" r="6" fill="#0d9488"/><text x="430" y="135" text-anchor="middle" fill="#0f766e">Beijing +8</text></g>
+<g><circle cx="400" cy="170" r="6" fill="#0d9488"/><text x="400" y="150" text-anchor="middle" fill="#0f766e">Jakarta +7</text></g>
+<g><circle cx="455" cy="170" r="6" fill="#0d9488"/><text x="490" y="150" text-anchor="middle" fill="#0f766e">Tokyo +9</text></g>
+<g><circle cx="640" cy="170" r="6" fill="#f59e0b"/><text x="640" y="135" text-anchor="middle" fill="#b45309">Sydney +11</text></g>
+</g>
+<text x="60" y="40" font-family="system-ui,Arial" font-size="11.5" fill="#64748b">DST shifts some zones by an hour seasonally; the tool applies it automatically.</text>
+</svg><figcaption>ပုံ 2- ဘုံဇုန်များ၏ UTC အော့ဖ်ဆက်များ (အမှန်တကယ် ပြောင်းလဲခြင်းကို ဘရောက်ဆာ DST ဖြင့် ကိုင်တွယ်သည်)။</figcaption></figure>
+<figure><picture><source type="image/webp" srcset="/img/specs.webp"><img src="/img/specs.png" alt="အသုံးများသော e-commerce ပံ့ပိုးမှုအချိန်ဇုန်များနှင့် UTC အော့ဖ်ဆက်ဇယား" width="1120" height="560" loading="lazy"></picture><figcaption>UTC အော့ဖ်ဆက်များကို တစ်ချက်ကြည့်ခြင်းဖြင့် နယ်စပ်ဖြတ်ကျော်ပံ့ပိုးမှုတွင် အသုံးများသည့် အချိန်ဇုန်များ</figcaption></figure>
+<section id="data2026">
+<h2>2026 ကမ္ဘာ့အချိန်ဇုန်နှင့် DST ခြုံငုံသုံးသပ်ချက် (ခန့်မှန်းချက်)</h2><p>နယ်စပ်ဖြတ်ကျော်ပံ့ပိုးမှုများအတွက် ၎င်းသည် ရှုခင်းကိုသိရန် ကူညီပေးသည်- 2026 ခုနှစ်အထိ၊ ကမ္ဘာ့နိုင်ငံများ၏ သုံးပုံတစ်ပုံခန့်သည် နေ့အလင်းရောင်ခြွေတာချိန် (2023 တွင် 34% ခန့်) ကိုဥရောပနှင့် မြောက်အမေရိကတွင် စုစည်းထားကာ အာရှနှင့် အီကွေတာ အာဖရိကအများစုမရှိသော်လည်း အာရှနှင့် အီကွေတာဒေသအများစုသည် တရုတ်ထံမှ နှိမ်နှင်းမှုကို တစ်နှစ်ပတ်လုံး မသတ်မှတ်နိုင်ပါ။ Global UTC အော့ဖ်ဆက်များ UTC-12 to UTC+14 အပိုင်း။</p>
+<table><tr><th>အယူအဆ</th><th>2026</th></tr><tr><td>DST (2023) ကို စောင့်ကြည့်နေသော နိုင်ငံများ</td><td>≈ 34%</td></tr><tr><td>ကမ္ဘာလုံးဆိုင်ရာ UTC အော့ဖ်ဆက်အပိုင်းအခြား</td><td>UTC-12 ~ UTC+14</td></tr><tr><td>Unix ခေတ်</td><td>1970-01-01 UTC</td></tr><tr><td>2038 ပြည့်လျှံသည့်အခိုက်</td><td>2038-01-19 03:14:07 UTC</td></tr></table>
+<p class="note" data-role="estimate-note">ခန့်မှန်းချက်၊ လက်ဦးဆရာမဟုတ်ပါ- DST မျှဝေမှုသည် Wikipedia မှဖြစ်သည် (2023 ခုနှစ်တွင် 34% အကြောင်း); အချိန်ဇုန်များနှင့် အော့ဖ်ဆက်များသည် IANA အချိန်ဇုန်ဒေတာဘေ့စ်ကို လိုက်နာသည်။ DST စတင်ခြင်းနှင့် ပြီးဆုံးသည့်ရက်စွဲများသည် နှစ်စဉ်နှစ်တိုင်း အနည်းငယ်ပြောင်းသွားသောကြောင့် အမှန်တကယ်ပြောင်းလဲခြင်းအတွက် tool (browser IANA data) ကို ယုံကြည်ပါ။</p></section>
+<div class="cta"><h2>Yi Waiwai ကိုဒေါင်းလုဒ်လုပ်ပါ။</h2><p>e-commerce ပံ့ပိုးမှုအတွက် ပိုမိုမြန်ဆန်သော စာပြန်ခြင်းနှင့် ဇာတ်ညွှန်းစီမံခန့်ခွဲမှု လိုအပ်ပါသလား။ တရားဝင်ဒေါင်းလုဒ်စာမျက်နှာမှ Yi Waiwai ဒက်စ်တော့အက်ပ်ကို ရယူပါ-</p><a class="dl" href="https://yiwaiwaiservice.com/download/">Yi Waiwai (တရားဝင်) ဒေါင်းလုဒ်လုပ်ပါ</a></div>
+<h2>မေးလေ့ရှိသောမေးခွန်းများ</h2><details><summary>Unix အချိန်တံဆိပ်ကို ရက်စွဲတစ်ခုသို့ မည်သို့ပြောင်းရမည်နည်း။</summary><p>အချိန်တံဆိပ်ကို အပေါ်က အကွက်ထဲသို့ ကူးထည့်ကာ ပြောင်းလိုက်ပါ။ ဂဏန်း ၁၀ လုံးသည် စက္ကန့်၊ ၁၃ သည် မီလီစက္ကန့်ဖြစ်သည်။ ကိရိယာသည် UTC နှင့် Beijing နှင့် US Eastern ကဲ့သို့သော ဇုန်များတွင် ကိုက်ညီသည့်အချိန်ကို ပြသသည်။</p></details><details><summary>မည်သည့်အချိန်ဇုန်သည် အချိန်တံဆိပ်တုံးဖြစ်သနည်း။</summary><p>Unix အချိန်တံဆိပ်တုံးသည် အချိန်ဇုန်မရှိပါ - ၎င်းသည် ကမ္ဘာလုံးဆိုင်ရာ လက်ငင်းတစ်ခုတည်းဖြစ်သော 1970-01-01 00:00:00 UTC မှစပြီး စက္ကန့်အရေအတွက်ဖြစ်သည်။ နံရံနာရီအချိန်အဖြစ် ပြသရန် ဇုန်တစ်ခုကိုသာ သင်ရွေးချယ်ပါ။</p></details><details><summary>ဖောက်သည်အချိန်သည် ကျွန်ုပ်၏နောက်ကွယ်မှ အဘယ်ကြောင့်ကွာခြားသနည်း။</summary><p>အချိန်ဇုန် ကွာဟမှု ရှိတတ်သည်။ ဖောက်သည်သည် ၎င်းတို့၏ ဒေသစံတော်ချိန်ကို ဖော်ပြနေချိန်တွင် နောက်ခံလူများသည် UTC သို့မဟုတ် ပေကျင်းအချိန်ကို အသုံးပြုလေ့ရှိသည်။ ချိန်ညှိရန် တူညီသောလက်ငင်းကို ဇုန်နှစ်ခုလုံးသို့ ပြောင်းပါ။</p></details><details><summary>နေ့အလင်းရောင်ချွေတာခြင်းသည် ပြောင်းလဲခြင်းအပေါ် သက်ရောက်မှုရှိပါသလား။</summary><p>ဟုတ်ကဲ့။ US အရှေ့ပိုင်း၊ လန်ဒန်နှင့် ဆစ်ဒနီတို့သည် DST ကို စောင့်ကြည့်နေသောကြောင့် ပေကျင်းနှင့် ၎င်းတို့၏ ကွာဟချက်သည် ရာသီအလိုက် ပြောင်းသွားပါသည်။ ကိရိယာသည် ၎င်းကို အလိုအလျောက် ကိုင်တွယ်ရန် ဘရောက်ဆာ built-in IANA ဒေတာကို အသုံးပြုသည်။</p></details><details><summary>2038 ပြဿနာကဘာလဲ။</summary><p>လက်မှတ်ရေးထိုးထားသော 32-bit အချိန်တံဆိပ်သည် 2038-01-19 03:14:07 UTC တွင် အများဆုံးထွက်ပြီး လျှံသွားပါသည်။ ခေတ်မီစနစ်များသည် 64-bit ကိုအသုံးပြုထားသောကြောင့် နေ့စဥ်ပံ့ပိုးမှုမှာ စိတ်ပူစရာမလိုသော်လည်း စနစ်ဟောင်းမှတ်တမ်းများကိုကြည့်ပါ။</p></details><details><summary>ကိရိယာသည် ကျွန်ုပ်၏ဒေတာကို အပ်လုဒ်လုပ်ပါသလား။</summary><p>နံပါတ်၊ အချိန်တံဆိပ်နှင့် အချိန်ဇုန်ပြောင်းလဲခြင်းအားလုံးသည် သင့်ဘရောက်ဆာတွင် စက်တွင်းတွင် လုပ်ဆောင်သည် - မည်သည့်အရာကိုမျှ အပ်လုဒ်လုပ်ထားခြင်း သို့မဟုတ် သိမ်းဆည်းထားခြင်းမရှိပါ။</p></details><details><summary>၎င်းသည် မီလီစက္ကန့်အချိန်တံဆိပ်များကို ပြောင်းလဲနိုင်ပါသလား။</summary><p>ဟုတ်ကဲ့။ ဂဏန်း 13 လုံးကို မီလီစက္ကန့်အဖြစ် ခွဲခြမ်းစိတ်ဖြာပြီး၊ 10 စက္ကန့်အဖြစ်၊ အချိန်တံဆိပ်ပြန်ရရန် ISO ရက်စွဲကိုလည်း ကူးထည့်နိုင်သည်။</p></details>
+<h2>လက်တွေ့ကမ္ဘာကို အမြန်စစ်ဆေးပါ။</h2><ul class="scenes"><li>နိုင်ငံရပ်ခြားမှ ဖောက်သည်တစ်ဦးသည် ၎င်းတို့၏ အမှာစာ ပေးပို့သည့်အခါတွင် မေးမြန်းသည်- နောက်ခံအစွန်းသည် UTC အချိန်တံဆိပ်ကို သိမ်းဆည်းထားသည်။ ၎င်းကို ဖောက်သည်ဇုန်သို့ ပြောင်းပြီး ရှုပ်ထွေးမှုများကို ရှောင်ရှားရန် ၎င်းတို့၏ ဒေသအချိန်ကို ပြောပြပါ။</li><li>အချိန်ပိုင်းဇုန် တိုက်ရိုက်ထုတ်လွှင့်မှု သို့မဟုတ် ရောင်းချမှုကို စီစဉ်ခြင်း- ဒေသတွင်း slot အလုပ်များကို အတည်ပြုရန် ပေကျင်းအချိန်ကို US Eastern နှင့် London သို့ ပြောင်းပါ။</li><li>မှတ်တမ်းပြဿနာဖြေရှင်းခြင်း- အမှာစာ API တစ်ခုသည် ဂဏန်း 10-အချိန်တံဆိပ်ကို ပြန်ပေးသည်၊ လူသား၏အချိန်ကိုဖတ်ရန်နှင့် အချိန်အတိအကျကိုရှာဖွေရန် ၎င်းကိုကူးထည့်ပါ။</li><li>ဖောက်သည်တစ်ဦးက ၎င်းသည် နောက်နေ့ဖြစ်နေပြီဟု ပြောသည်- ကြီးမားသော အော့ဖ်ဆက်များ သို့မဟုတ် ရက်စွဲမျဉ်းကိုဖြတ်၍ တစ်ဖက်စီ၏ ဒေသန္တရရက်စွဲကို အတည်ပြုပါ သို့မှသာ သင်သည် မှားယွင်းသောနေ့ကို ကိုးကားခြင်းမပြုရန်။</li></ul>
+<div class="related"><h2>ဆက်စပ်</h2><ul>
+<li><a href="/my/about-editor/">စာရေးသူအကြောင်း- Zhou Ming</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unix_time" rel="nofollow">Wikipedia: Unix time</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Daylight_saving_time" rel="nofollow">Wikipedia: Daylight saving time</a></li>
+<li><a href="https://www.iana.org/time-zones" rel="nofollow">IANA Time Zone Database</a></li>
+<li><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat" rel="nofollow">MDN: Intl.DateTimeFormat</a></li>
+</ul></div></main>
+<footer>Wikipedia (Unix အချိန်၊ နေ့အလင်းရောင် ချွေတာချိန်) နှင့် IANA အချိန်ဇုန်ဒေတာဘေ့စ်မှ ပြုစုထားသော အချိန်တံဆိပ်နှင့် အချိန်ဇုန်အချက်အလက်၊ ပြောင်းလဲခြင်းမှာ စံဘရောက်ဆာ APIs (Date / Intl) ကိုအသုံးပြုပြီး ကိုးကားရန်အတွက်သာဖြစ်သည်။<br>周明 · အကြောင်းအရာတည်းဖြတ်သူ · MIT License</footer>
+</div><script>window.LABELS={"now_ts": "လက်ရှိ Unix အချိန်တံဆိပ်", "local_tz": "သင်၏အချိန်ဇုန်", "region": "တိုင်းဒေသကြီး", "tz_name": "IANA စံတော်ချိန်", "local_time": "ဒေသစံတော်ချိန်", "detecting": "စာဖတ်ချိန်ဇုန်များ...", "unix_ts": "Unix အချိန်တံဆိပ် (များ)", "bad_input": "ခွဲခြမ်းစိတ်ဖြာ၍မရပါ - Unix အချိန်တံဆိပ် (10/13 ဂဏန်းများ) သို့မဟုတ် ရက်စွဲတစ်ခု ထည့်ပါ။", "convert": "ပြောင်းပါ။", "ph": "Unix အချိန်တံဆိပ် သို့မဟုတ် ရက်စွဲကို ထည့်ပါ၊ ဥပမာ။ 1000000000"};window.TZLIST=[{"tz": "Asia/Shanghai", "label": "Beijing / China"}, {"tz": "UTC", "label": "UTC"}, {"tz": "America/New_York", "label": "US Eastern"}, {"tz": "America/Los_Angeles", "label": "US Pacific"}, {"tz": "Europe/London", "label": "London"}, {"tz": "Asia/Tokyo", "label": "Tokyo"}, {"tz": "Asia/Jakarta", "label": "Jakarta"}, {"tz": "Australia/Sydney", "label": "Sydney"}];</script><script src="/app.js"></script></body></html>
